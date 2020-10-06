@@ -1,0 +1,3056 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cycles:ppp'
+# Event count (approx.): 134525555496
+#
+# Children      Self       Samples  Command    Shared Object          Symbol                                        
+# ........  ........  ............  .........  .....................  ..............................................
+#
+    67.94%     0.94%            50  memcached  [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               |          
+               |--53.40%--__libc_sendmsg
+               |          |          
+               |           --53.36%--0
+               |          
+               |--10.64%--__libc_read
+               |          |          
+               |          |--0.76%--0x303538382d726569
+               |          |          
+               |          |--0.75%--0x373734392d726569
+               |          |          
+               |          |--0.66%--0x343738312d726569
+               |          |          
+               |          |--0.58%--0x353834372d726569
+               |          |          
+               |          |--0.57%--0x373334362d726569
+               |          |          
+               |           --0.55%--0x353734332d726569
+               |          
+                --3.90%--epoll_wait
+                          |          
+                           --3.90%--0x100000000
+
+    66.70%    11.44%           571  memcached  [kernel.kallsyms]      [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --66.51%--entry_SYSCALL_64_after_hwframe
+                          |          
+                          |--52.12%--__libc_sendmsg
+                          |          0
+                          |          
+                          |--10.48%--__libc_read
+                          |          |          
+                          |          |--0.75%--0x373734392d726569
+                          |          |          
+                          |          |--0.72%--0x303538382d726569
+                          |          |          
+                          |          |--0.66%--0x343738312d726569
+                          |          |          
+                          |          |--0.58%--0x353834372d726569
+                          |          |          
+                          |          |--0.57%--0x373334362d726569
+                          |          |          
+                          |           --0.55%--0x353734332d726569
+                          |          
+                           --3.90%--epoll_wait
+                                     |          
+                                      --3.90%--0x100000000
+
+    66.22%     0.00%             0  memcached  [unknown]              [.] 0000000000000000
+            |
+            ---0
+
+    64.36%     0.65%            35  memcached  libpthread-2.27.so     [.] __libc_sendmsg
+            |
+            ---__libc_sendmsg
+               |          
+                --64.27%--0
+
+    41.69%     0.25%            13  memcached  [kernel.kallsyms]      [k] sys_sendmsg
+            |
+            ---sys_sendmsg
+               |          
+                --41.41%--do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    41.18%     0.58%            31  memcached  [kernel.kallsyms]      [k] __sys_sendmsg
+            |
+            ---__sys_sendmsg
+               |          
+                --41.12%--sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    38.60%     0.96%            51  memcached  [kernel.kallsyms]      [k] ___sys_sendmsg
+            |
+            ---___sys_sendmsg
+               |          
+                --38.46%--__sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    35.37%     0.16%             9  memcached  [kernel.kallsyms]      [k] sock_sendmsg
+            |
+            ---sock_sendmsg
+               |          
+                --35.35%--___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    33.51%     0.25%            13  memcached  [kernel.kallsyms]      [k] inet_sendmsg
+            |
+            ---inet_sendmsg
+               |          
+                --33.44%--sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    33.22%     0.20%            11  memcached  [kernel.kallsyms]      [k] tcp_sendmsg
+            |
+            ---tcp_sendmsg
+               |          
+                --33.09%--inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    27.82%     2.88%           155  memcached  [kernel.kallsyms]      [k] tcp_sendmsg_locked
+            |
+            ---tcp_sendmsg_locked
+               |          
+                --27.75%--tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    14.46%     0.77%            41  memcached  [kernel.kallsyms]      [k] tcp_write_xmit
+            |
+            ---tcp_write_xmit
+               |          
+               |--12.93%--__tcp_push_pending_frames
+               |          |          
+               |           --12.90%--tcp_push
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --1.53%--tcp_tsq_handler.part.42
+                          |          
+                           --1.31%--tcp_tasklet_func
+                                     tasklet_action
+                                     __softirqentry_text_start
+                                     |          
+                                      --1.27%--irq_exit
+                                                do_IRQ
+                                                ret_from_intr
+
+    13.35%     0.26%            14  memcached  [kernel.kallsyms]      [k] tcp_push
+            |
+            ---tcp_push
+               |          
+                --13.30%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    13.12%     0.02%             1  memcached  [kernel.kallsyms]      [k] __tcp_push_pending_frames
+            |
+            ---__tcp_push_pending_frames
+               |          
+                --13.09%--tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    11.45%     0.09%             5  memcached  libpthread-2.27.so     [.] __libc_read
+            |
+            ---__libc_read
+               |          
+               |--0.77%--0x373734392d726569
+               |          
+               |--0.76%--0x303538382d726569
+               |          
+               |--0.71%--0x343738312d726569
+               |          
+               |--0.63%--0x353834372d726569
+               |          
+               |--0.63%--0x373334362d726569
+               |          
+                --0.61%--0x353734332d726569
+
+    11.34%     0.99%            37  memcached  [kernel.kallsyms]      [k] __tcp_transmit_skb
+            |
+            ---__tcp_transmit_skb
+               |          
+               |--10.15%--tcp_write_xmit
+               |          |          
+               |          |--9.04%--__tcp_push_pending_frames
+               |          |          |          
+               |          |           --9.03%--tcp_push
+               |          |                     tcp_sendmsg_locked
+               |          |                     tcp_sendmsg
+               |          |                     inet_sendmsg
+               |          |                     sock_sendmsg
+               |          |                     ___sys_sendmsg
+               |          |                     __sys_sendmsg
+               |          |                     sys_sendmsg
+               |          |                     do_syscall_64
+               |          |                     entry_SYSCALL_64_after_hwframe
+               |          |                     __libc_sendmsg
+               |          |                     0
+               |          |          
+               |           --1.11%--tcp_tsq_handler.part.42
+               |                     |          
+               |                      --0.96%--tcp_tasklet_func
+               |                                tasklet_action
+               |                                __softirqentry_text_start
+               |                                |          
+               |                                 --0.92%--irq_exit
+               |                                           do_IRQ
+               |                                           ret_from_intr
+               |          
+               |--0.61%--__tcp_retransmit_skb
+               |          tcp_send_loss_probe
+               |          tcp_write_timer_handler
+               |          tcp_write_timer
+               |          call_timer_fn
+               |          run_timer_softirq
+               |          __softirqentry_text_start
+               |          |          
+               |           --0.59%--irq_exit
+               |                     smp_apic_timer_interrupt
+               |                     apic_timer_interrupt
+               |          
+                --0.56%--__tcp_send_ack.part.39
+                          tcp_send_ack
+
+     9.40%     0.05%             3  memcached  [kernel.kallsyms]      [k] sys_read
+            |
+            ---sys_read
+               |          
+                --9.36%--do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+                          |          
+                          |--0.68%--0x373734392d726569
+                          |          
+                          |--0.60%--0x343738312d726569
+                          |          
+                          |--0.53%--0x303538382d726569
+                          |          
+                           --0.51%--0x373334362d726569
+
+     8.71%     0.35%            19  memcached  [kernel.kallsyms]      [k] ip_queue_xmit
+            |
+            ---ip_queue_xmit
+               |          
+                --8.66%--__tcp_transmit_skb
+                          |          
+                           --7.97%--tcp_write_xmit
+                                     |          
+                                     |--7.04%--__tcp_push_pending_frames
+                                     |          tcp_push
+                                     |          tcp_sendmsg_locked
+                                     |          tcp_sendmsg
+                                     |          inet_sendmsg
+                                     |          sock_sendmsg
+                                     |          ___sys_sendmsg
+                                     |          __sys_sendmsg
+                                     |          sys_sendmsg
+                                     |          do_syscall_64
+                                     |          entry_SYSCALL_64_after_hwframe
+                                     |          __libc_sendmsg
+                                     |          0
+                                     |          
+                                      --0.92%--tcp_tsq_handler.part.42
+                                                |          
+                                                 --0.79%--tcp_tasklet_func
+                                                           tasklet_action
+                                                           __softirqentry_text_start
+                                                           |          
+                                                            --0.77%--irq_exit
+                                                                      do_IRQ
+                                                                      ret_from_intr
+
+     8.24%     0.11%             6  memcached  [kernel.kallsyms]      [k] vfs_read
+            |
+            ---vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+               |          
+                --0.50%--0x373734392d726569
+
+     8.04%     0.06%             3  memcached  [kernel.kallsyms]      [k] ip_local_out
+            |
+            ---ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --7.43%--tcp_write_xmit
+                          |          
+                          |--6.52%--__tcp_push_pending_frames
+                          |          tcp_push
+                          |          tcp_sendmsg_locked
+                          |          tcp_sendmsg
+                          |          inet_sendmsg
+                          |          sock_sendmsg
+                          |          ___sys_sendmsg
+                          |          __sys_sendmsg
+                          |          sys_sendmsg
+                          |          do_syscall_64
+                          |          entry_SYSCALL_64_after_hwframe
+                          |          __libc_sendmsg
+                          |          0
+                          |          
+                           --0.91%--tcp_tsq_handler.part.42
+                                     |          
+                                      --0.78%--tcp_tasklet_func
+                                                tasklet_action
+                                                __softirqentry_text_start
+                                                |          
+                                                 --0.76%--irq_exit
+                                                           do_IRQ
+                                                           ret_from_intr
+
+     7.98%     0.02%             1  memcached  [kernel.kallsyms]      [k] __softirqentry_text_start
+            |
+            ---__softirqentry_text_start
+               |          
+               |--7.28%--irq_exit
+               |          |          
+               |          |--5.08%--do_IRQ
+               |          |          ret_from_intr
+               |          |          |          
+               |          |          |--0.83%--__libc_sendmsg
+               |          |          |          0
+               |          |          |          
+               |          |           --0.64%--tcp_v4_md5_lookup
+               |          |                     tcp_current_mss
+               |          |                     tcp_send_mss
+               |          |                     tcp_sendmsg_locked
+               |          |                     tcp_sendmsg
+               |          |                     inet_sendmsg
+               |          |                     sock_sendmsg
+               |          |                     ___sys_sendmsg
+               |          |                     __sys_sendmsg
+               |          |                     sys_sendmsg
+               |          |                     do_syscall_64
+               |          |                     entry_SYSCALL_64_after_hwframe
+               |          |                     __libc_sendmsg
+               |          |                     0
+               |          |          
+               |           --2.20%--smp_apic_timer_interrupt
+               |                     apic_timer_interrupt
+               |          
+                --0.70%--do_softirq_own_stack
+                          do_softirq.part.17
+                          __local_bh_enable_ip
+
+     7.45%     0.15%             8  memcached  [kernel.kallsyms]      [k] ip_output
+            |
+            ---ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --6.90%--tcp_write_xmit
+                          |          
+                          |--6.03%--__tcp_push_pending_frames
+                          |          tcp_push
+                          |          tcp_sendmsg_locked
+                          |          tcp_sendmsg
+                          |          inet_sendmsg
+                          |          sock_sendmsg
+                          |          ___sys_sendmsg
+                          |          __sys_sendmsg
+                          |          sys_sendmsg
+                          |          do_syscall_64
+                          |          entry_SYSCALL_64_after_hwframe
+                          |          __libc_sendmsg
+                          |          0
+                          |          
+                           --0.87%--tcp_tsq_handler.part.42
+                                     |          
+                                      --0.76%--tcp_tasklet_func
+                                                tasklet_action
+                                                __softirqentry_text_start
+                                                irq_exit
+                                                do_IRQ
+                                                ret_from_intr
+
+     7.31%     0.02%             1  memcached  [kernel.kallsyms]      [k] irq_exit
+            |
+            ---irq_exit
+               |          
+               |--5.09%--do_IRQ
+               |          ret_from_intr
+               |          |          
+               |          |--0.83%--__libc_sendmsg
+               |          |          0
+               |          |          
+               |           --0.64%--tcp_v4_md5_lookup
+               |                     tcp_current_mss
+               |                     tcp_send_mss
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --2.22%--smp_apic_timer_interrupt
+                          apic_timer_interrupt
+
+     7.27%     0.19%            10  memcached  [kernel.kallsyms]      [k] ip_finish_output
+            |
+            ---ip_finish_output
+               ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --6.71%--tcp_write_xmit
+                          |          
+                          |--5.92%--__tcp_push_pending_frames
+                          |          tcp_push
+                          |          tcp_sendmsg_locked
+                          |          tcp_sendmsg
+                          |          inet_sendmsg
+                          |          sock_sendmsg
+                          |          ___sys_sendmsg
+                          |          __sys_sendmsg
+                          |          sys_sendmsg
+                          |          do_syscall_64
+                          |          entry_SYSCALL_64_after_hwframe
+                          |          __libc_sendmsg
+                          |          0
+                          |          
+                           --0.79%--tcp_tsq_handler.part.42
+                                     |          
+                                      --0.70%--tcp_tasklet_func
+                                                tasklet_action
+                                                __softirqentry_text_start
+                                                irq_exit
+                                                do_IRQ
+                                                ret_from_intr
+
+     6.94%     0.00%             0  memcached  [kernel.kallsyms]      [k] __vfs_read
+            |
+            ---__vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     6.90%     0.18%             9  memcached  [kernel.kallsyms]      [k] new_sync_read
+            |
+            ---new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     6.80%     0.32%            17  memcached  [kernel.kallsyms]      [k] ip_finish_output2
+            |
+            ---ip_finish_output2
+               |          
+                --6.78%--ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                           --6.26%--tcp_write_xmit
+                                     |          
+                                     |--5.53%--__tcp_push_pending_frames
+                                     |          tcp_push
+                                     |          tcp_sendmsg_locked
+                                     |          tcp_sendmsg
+                                     |          inet_sendmsg
+                                     |          sock_sendmsg
+                                     |          ___sys_sendmsg
+                                     |          __sys_sendmsg
+                                     |          sys_sendmsg
+                                     |          do_syscall_64
+                                     |          entry_SYSCALL_64_after_hwframe
+                                     |          __libc_sendmsg
+                                     |          0
+                                     |          
+                                      --0.73%--tcp_tsq_handler.part.42
+                                                |          
+                                                 --0.64%--tcp_tasklet_func
+                                                           tasklet_action
+                                                           __softirqentry_text_start
+                                                           irq_exit
+                                                           do_IRQ
+                                                           ret_from_intr
+
+     6.74%     0.10%             5  memcached  [kernel.kallsyms]      [k] sock_read_iter
+            |
+            ---sock_read_iter
+               |          
+                --6.72%--new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     6.59%     0.04%             2  memcached  [kernel.kallsyms]      [k] sock_recvmsg
+            |
+            ---sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     6.02%     0.04%             2  memcached  [kernel.kallsyms]      [k] inet_recvmsg
+            |
+            ---inet_recvmsg
+               |          
+                --6.00%--sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     5.99%     0.02%             1  memcached  [kernel.kallsyms]      [k] dev_queue_xmit
+            |
+            ---dev_queue_xmit
+               |          
+                --5.97%--ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                           --5.50%--tcp_write_xmit
+                                     |          
+                                     |--4.86%--__tcp_push_pending_frames
+                                     |          tcp_push
+                                     |          tcp_sendmsg_locked
+                                     |          tcp_sendmsg
+                                     |          inet_sendmsg
+                                     |          sock_sendmsg
+                                     |          ___sys_sendmsg
+                                     |          __sys_sendmsg
+                                     |          sys_sendmsg
+                                     |          do_syscall_64
+                                     |          entry_SYSCALL_64_after_hwframe
+                                     |          __libc_sendmsg
+                                     |          0
+                                     |          
+                                      --0.64%--tcp_tsq_handler.part.42
+                                                |          
+                                                 --0.55%--tcp_tasklet_func
+                                                           tasklet_action
+                                                           __softirqentry_text_start
+                                                           irq_exit
+                                                           do_IRQ
+                                                           ret_from_intr
+
+     5.99%     0.50%            27  memcached  [kernel.kallsyms]      [k] __dev_queue_xmit
+            |
+            ---__dev_queue_xmit
+               |          
+                --5.92%--dev_queue_xmit
+                          ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                           --5.44%--tcp_write_xmit
+                                     |          
+                                     |--4.80%--__tcp_push_pending_frames
+                                     |          tcp_push
+                                     |          tcp_sendmsg_locked
+                                     |          tcp_sendmsg
+                                     |          inet_sendmsg
+                                     |          sock_sendmsg
+                                     |          ___sys_sendmsg
+                                     |          __sys_sendmsg
+                                     |          sys_sendmsg
+                                     |          do_syscall_64
+                                     |          entry_SYSCALL_64_after_hwframe
+                                     |          __libc_sendmsg
+                                     |          0
+                                     |          
+                                      --0.64%--tcp_tsq_handler.part.42
+                                                |          
+                                                 --0.55%--tcp_tasklet_func
+                                                           tasklet_action
+                                                           __softirqentry_text_start
+                                                           irq_exit
+                                                           do_IRQ
+                                                           ret_from_intr
+
+     5.92%     1.14%            61  memcached  [kernel.kallsyms]      [k] tcp_recvmsg
+            |
+            ---tcp_recvmsg
+               inet_recvmsg
+               sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     5.65%     0.04%             2  memcached  [kernel.kallsyms]      [k] ret_from_intr
+            |
+            ---ret_from_intr
+               |          
+               |--0.98%--__libc_sendmsg
+               |          0
+               |          
+                --0.64%--tcp_v4_md5_lookup
+                          tcp_current_mss
+                          tcp_send_mss
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     5.59%     0.02%             1  memcached  [kernel.kallsyms]      [k] do_IRQ
+            |
+            ---do_IRQ
+               ret_from_intr
+               |          
+               |--0.94%--__libc_sendmsg
+               |          0
+               |          
+                --0.64%--tcp_v4_md5_lookup
+                          tcp_current_mss
+                          tcp_send_mss
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     4.67%     4.67%           230  memcached  [kernel.kallsyms]      [k] syscall_return_via_sysret
+            |
+            ---syscall_return_via_sysret
+               |          
+                --4.41%--__libc_sendmsg
+                          0
+
+     4.60%     0.09%             5  memcached  [kernel.kallsyms]      [k] sch_direct_xmit
+            |
+            ---sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               ip_finish_output2
+               ip_finish_output
+               ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --4.24%--tcp_write_xmit
+                          |          
+                          |--3.69%--__tcp_push_pending_frames
+                          |          tcp_push
+                          |          tcp_sendmsg_locked
+                          |          tcp_sendmsg
+                          |          inet_sendmsg
+                          |          sock_sendmsg
+                          |          ___sys_sendmsg
+                          |          __sys_sendmsg
+                          |          sys_sendmsg
+                          |          do_syscall_64
+                          |          entry_SYSCALL_64_after_hwframe
+                          |          __libc_sendmsg
+                          |          0
+                          |          
+                           --0.54%--tcp_tsq_handler.part.42
+
+     4.06%     0.31%             8  memcached  [kernel.kallsyms]      [k] sk_stream_alloc_skb
+            |
+            ---sk_stream_alloc_skb
+               |          
+                --3.86%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     3.97%     0.00%             0  memcached  [unknown]              [.] 0x0000000100000000
+            |
+            ---0x100000000
+
+     3.91%     0.00%             0  memcached  libc-2.27.so           [.] epoll_wait
+            |
+            ---epoll_wait
+               |          
+                --3.91%--0x100000000
+
+     3.90%     0.00%             0  memcached  [kernel.kallsyms]      [k] sys_epoll_wait
+            |
+            ---sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               |          
+                --3.90%--0x100000000
+
+     3.90%     0.00%             0  memcached  [kernel.kallsyms]      [k] ep_poll
+            |
+            ---ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               |          
+                --3.90%--0x100000000
+
+     3.89%     0.00%             0  memcached  [kernel.kallsyms]      [k] ep_scan_ready_list.constprop.17
+            |
+            ---ep_scan_ready_list.constprop.17
+               ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               0x100000000
+
+     3.89%     0.13%             7  memcached  [kernel.kallsyms]      [k] ep_send_events_proc
+            |
+            ---ep_send_events_proc
+               ep_scan_ready_list.constprop.17
+               ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               0x100000000
+
+     3.78%     0.15%             8  memcached  [kernel.kallsyms]      [k] net_rx_action
+            |
+            ---net_rx_action
+               __softirqentry_text_start
+               |          
+               |--3.27%--irq_exit
+               |          |          
+               |           --3.23%--do_IRQ
+               |                     ret_from_intr
+               |                     |          
+               |                      --0.64%--tcp_v4_md5_lookup
+               |                                tcp_current_mss
+               |                                tcp_send_mss
+               |                                tcp_sendmsg_locked
+               |                                tcp_sendmsg
+               |                                inet_sendmsg
+               |                                sock_sendmsg
+               |                                ___sys_sendmsg
+               |                                __sys_sendmsg
+               |                                sys_sendmsg
+               |                                do_syscall_64
+               |                                entry_SYSCALL_64_after_hwframe
+               |                                __libc_sendmsg
+               |                                0
+               |          
+                --0.51%--do_softirq_own_stack
+                          do_softirq.part.17
+                          __local_bh_enable_ip
+
+     3.70%     0.80%            12  memcached  [kernel.kallsyms]      [k] ep_item_poll.isra.12
+            |
+            ---ep_item_poll.isra.12
+               ep_send_events_proc
+               ep_scan_ready_list.constprop.17
+               ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               0x100000000
+
+     3.54%     0.75%            25  memcached  [kernel.kallsyms]      [k] tcp_send_mss
+            |
+            ---tcp_send_mss
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     3.54%     0.44%            25  memcached  [kernel.kallsyms]      [k] ixgbe_poll
+            |
+            ---ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+               |--3.03%--irq_exit
+               |          |          
+               |           --2.99%--do_IRQ
+               |                     ret_from_intr
+               |                     |          
+               |                      --0.64%--tcp_v4_md5_lookup
+               |                                tcp_current_mss
+               |                                tcp_send_mss
+               |                                tcp_sendmsg_locked
+               |                                tcp_sendmsg
+               |                                inet_sendmsg
+               |                                sock_sendmsg
+               |                                ___sys_sendmsg
+               |                                __sys_sendmsg
+               |                                sys_sendmsg
+               |                                do_syscall_64
+               |                                entry_SYSCALL_64_after_hwframe
+               |                                __libc_sendmsg
+               |                                0
+               |          
+                --0.51%--do_softirq_own_stack
+                          do_softirq.part.17
+                          __local_bh_enable_ip
+
+     3.51%     3.51%           182  memcached  [kernel.kallsyms]      [k] __entry_trampoline_start
+            |
+            ---__entry_trampoline_start
+               |          
+                --3.29%--__libc_sendmsg
+                          0
+
+     3.45%     1.46%            74  memcached  [kernel.kallsyms]      [k] __alloc_skb
+            |
+            ---__alloc_skb
+               |          
+                --3.34%--sk_stream_alloc_skb
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     2.94%     1.88%           101  memcached  [kernel.kallsyms]      [k] sock_poll
+            |
+            ---sock_poll
+               |          
+                --2.88%--ep_item_poll.isra.12
+                          ep_send_events_proc
+                          ep_scan_ready_list.constprop.17
+                          ep_poll
+                          sys_epoll_wait
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          epoll_wait
+                          0x100000000
+
+     2.71%     0.77%            41  memcached  [kernel.kallsyms]      [k] tcp_current_mss
+            |
+            ---tcp_current_mss
+               |          
+                --2.53%--tcp_send_mss
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     2.51%     0.02%             1  memcached  [kernel.kallsyms]      [k] napi_gro_receive
+            |
+            ---napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --2.06%--irq_exit
+                          |          
+                           --2.04%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.48%     2.32%           123  memcached  [kernel.kallsyms]      [k] _raw_spin_lock
+            |
+            ---_raw_spin_lock
+               |          
+                --1.46%--sch_direct_xmit
+                          __dev_queue_xmit
+                          dev_queue_xmit
+                          ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                           --1.34%--tcp_write_xmit
+                                     |          
+                                      --1.18%--__tcp_push_pending_frames
+                                                tcp_push
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.44%     1.54%            73  memcached  [kernel.kallsyms]      [k] __check_object_size
+            |
+            ---__check_object_size
+               |          
+               |--0.97%--tcp_sendmsg_locked
+               |          tcp_sendmsg
+               |          inet_sendmsg
+               |          sock_sendmsg
+               |          ___sys_sendmsg
+               |          __sys_sendmsg
+               |          sys_sendmsg
+               |          do_syscall_64
+               |          entry_SYSCALL_64_after_hwframe
+               |          __libc_sendmsg
+               |          0
+               |          
+                --0.91%--skb_copy_datagram_iter
+                          tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     2.44%     0.00%             0  memcached  [kernel.kallsyms]      [k] netif_receive_skb_internal
+            |
+            ---netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.98%--irq_exit
+                          |          
+                           --1.96%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.44%     0.00%             0  memcached  [kernel.kallsyms]      [k] __netif_receive_skb
+            |
+            ---__netif_receive_skb
+               netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.98%--irq_exit
+                          |          
+                           --1.96%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.44%     0.00%             0  memcached  [kernel.kallsyms]      [k] __netif_receive_skb_core
+            |
+            ---__netif_receive_skb_core
+               __netif_receive_skb
+               netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.98%--irq_exit
+                          |          
+                           --1.96%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.44%     0.03%             2  memcached  [kernel.kallsyms]      [k] ip_rcv
+            |
+            ---ip_rcv
+               __netif_receive_skb_core
+               __netif_receive_skb
+               netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.98%--irq_exit
+                          |          
+                           --1.96%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.41%     0.20%            11  memcached  [kernel.kallsyms]      [k] sk_reset_timer
+            |
+            ---sk_reset_timer
+               |          
+               |--1.81%--tcp_rearm_rto.part.60
+               |          tcp_rearm_rto
+               |          tcp_event_new_data_sent
+               |          tcp_write_xmit
+               |          |          
+               |           --1.72%--__tcp_push_pending_frames
+               |                     tcp_push
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --0.60%--tcp_schedule_loss_probe
+                          |          
+                           --0.51%--tcp_write_xmit
+
+     2.40%     0.00%             0  memcached  [kernel.kallsyms]      [k] ip_rcv_finish
+            |
+            ---ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_core
+               __netif_receive_skb
+               netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.97%--irq_exit
+                          |          
+                           --1.95%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.40%     0.20%            11  memcached  [kernel.kallsyms]      [k] dev_hard_start_xmit
+            |
+            ---dev_hard_start_xmit
+               sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               ip_finish_output2
+               ip_finish_output
+               ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --2.27%--tcp_write_xmit
+                          |          
+                           --2.02%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     2.39%     0.39%            21  memcached  [kernel.kallsyms]      [k] lock_sock_nested
+            |
+            ---lock_sock_nested
+               |          
+                --2.17%--tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     2.36%     0.43%            23  memcached  [kernel.kallsyms]      [k] __fget_light
+            |
+            ---__fget_light
+               |          
+               |--1.19%--__fdget
+               |          sockfd_lookup_light
+               |          __sys_sendmsg
+               |          sys_sendmsg
+               |          do_syscall_64
+               |          entry_SYSCALL_64_after_hwframe
+               |          __libc_sendmsg
+               |          0
+               |          
+                --1.00%--__fdget_pos
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     2.33%     0.00%             0  memcached  [kernel.kallsyms]      [k] run_timer_softirq
+            |
+            ---run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --2.18%--irq_exit
+                          |          
+                           --2.16%--smp_apic_timer_interrupt
+                                     apic_timer_interrupt
+
+     2.29%     0.00%             0  memcached  [kernel.kallsyms]      [k] apic_timer_interrupt
+            |
+            ---apic_timer_interrupt
+
+     2.29%     0.00%             0  memcached  [kernel.kallsyms]      [k] smp_apic_timer_interrupt
+            |
+            ---smp_apic_timer_interrupt
+               apic_timer_interrupt
+
+     2.24%     0.15%             8  memcached  [kernel.kallsyms]      [k] ixgbe_xmit_frame
+            |
+            ---ixgbe_xmit_frame
+               |          
+                --2.20%--dev_hard_start_xmit
+                          sch_direct_xmit
+                          __dev_queue_xmit
+                          dev_queue_xmit
+                          ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                           --2.06%--tcp_write_xmit
+                                     |          
+                                      --1.84%--__tcp_push_pending_frames
+                                                tcp_push
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.22%     0.02%             1  memcached  [kernel.kallsyms]      [k] ip_local_deliver
+            |
+            ---ip_local_deliver
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_core
+               __netif_receive_skb
+               netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.80%--irq_exit
+                          |          
+                           --1.78%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.22%     0.08%             4  memcached  [kernel.kallsyms]      [k] call_timer_fn
+            |
+            ---call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --2.06%--irq_exit
+                          |          
+                           --2.04%--smp_apic_timer_interrupt
+                                     apic_timer_interrupt
+
+     2.20%     0.02%             1  memcached  [kernel.kallsyms]      [k] ip_local_deliver_finish
+            |
+            ---ip_local_deliver_finish
+               ip_local_deliver
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_core
+               __netif_receive_skb
+               netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.78%--irq_exit
+                          |          
+                           --1.76%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.18%     0.09%             5  memcached  [kernel.kallsyms]      [k] tcp_v4_rcv
+            |
+            ---tcp_v4_rcv
+               ip_local_deliver_finish
+               ip_local_deliver
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_core
+               __netif_receive_skb
+               netif_receive_skb_internal
+               napi_gro_receive
+               ixgbe_poll
+               net_rx_action
+               __softirqentry_text_start
+               |          
+                --1.76%--irq_exit
+                          |          
+                           --1.74%--do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     2.10%     0.92%            49  memcached  [kernel.kallsyms]      [k] mod_timer
+            |
+            ---mod_timer
+               sk_reset_timer
+               |          
+               |--1.57%--tcp_rearm_rto.part.60
+               |          tcp_rearm_rto
+               |          tcp_event_new_data_sent
+               |          tcp_write_xmit
+               |          |          
+               |           --1.48%--__tcp_push_pending_frames
+               |                     tcp_push
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --0.53%--tcp_schedule_loss_probe
+
+     2.09%     0.77%            42  memcached  [kernel.kallsyms]      [k] _raw_spin_lock_bh
+            |
+            ---_raw_spin_lock_bh
+               |          
+                --1.60%--lock_sock_nested
+                          |          
+                           --1.48%--tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     2.05%     0.00%             0  memcached  [kernel.kallsyms]      [k] tcp_v4_do_rcv
+            |
+            ---tcp_v4_do_rcv
+               |          
+                --1.99%--tcp_v4_rcv
+                          ip_local_deliver_finish
+                          ip_local_deliver
+                          ip_rcv_finish
+                          ip_rcv
+                          __netif_receive_skb_core
+                          __netif_receive_skb
+                          netif_receive_skb_internal
+                          napi_gro_receive
+                          ixgbe_poll
+                          net_rx_action
+                          __softirqentry_text_start
+                          |          
+                           --1.57%--irq_exit
+                                     |          
+                                      --1.55%--do_IRQ
+                                                ret_from_intr
+                                                |          
+                                                 --0.64%--tcp_v4_md5_lookup
+                                                           tcp_current_mss
+                                                           tcp_send_mss
+                                                           tcp_sendmsg_locked
+                                                           tcp_sendmsg
+                                                           inet_sendmsg
+                                                           sock_sendmsg
+                                                           ___sys_sendmsg
+                                                           __sys_sendmsg
+                                                           sys_sendmsg
+                                                           do_syscall_64
+                                                           entry_SYSCALL_64_after_hwframe
+                                                           __libc_sendmsg
+                                                           0
+
+     2.05%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_rcv_established
+            |
+            ---tcp_rcv_established
+               tcp_v4_do_rcv
+               |          
+                --1.99%--tcp_v4_rcv
+                          ip_local_deliver_finish
+                          ip_local_deliver
+                          ip_rcv_finish
+                          ip_rcv
+                          __netif_receive_skb_core
+                          __netif_receive_skb
+                          netif_receive_skb_internal
+                          napi_gro_receive
+                          ixgbe_poll
+                          net_rx_action
+                          __softirqentry_text_start
+                          |          
+                           --1.57%--irq_exit
+                                     |          
+                                      --1.55%--do_IRQ
+                                                ret_from_intr
+                                                |          
+                                                 --0.64%--tcp_v4_md5_lookup
+                                                           tcp_current_mss
+                                                           tcp_send_mss
+                                                           tcp_sendmsg_locked
+                                                           tcp_sendmsg
+                                                           inet_sendmsg
+                                                           sock_sendmsg
+                                                           ___sys_sendmsg
+                                                           __sys_sendmsg
+                                                           sys_sendmsg
+                                                           do_syscall_64
+                                                           entry_SYSCALL_64_after_hwframe
+                                                           __libc_sendmsg
+                                                           0
+
+     2.03%     0.11%             6  memcached  [kernel.kallsyms]      [k] tcp_event_new_data_sent
+            |
+            ---tcp_event_new_data_sent
+               tcp_write_xmit
+               |          
+                --1.88%--__tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     2.01%     0.00%             0  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e8f8
+            |
+            ---0x1e8f8
+
+     2.01%     0.45%            24  memcached  [kernel.kallsyms]      [k] release_sock
+            |
+            ---release_sock
+               |          
+                --1.84%--tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.99%     1.83%            98  memcached  memcached              [.] tokenize_command.constprop.28
+            |
+            ---tokenize_command.constprop.28
+
+     1.94%     1.55%            83  memcached  [kernel.kallsyms]      [k] ixgbe_xmit_frame_ring
+            |
+            ---ixgbe_xmit_frame_ring
+               ixgbe_xmit_frame
+               dev_hard_start_xmit
+               sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               ip_finish_output2
+               ip_finish_output
+               ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --1.82%--tcp_write_xmit
+                          |          
+                           --1.63%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     1.91%     0.04%             2  memcached  [kernel.kallsyms]      [k] skb_copy_datagram_iter
+            |
+            ---skb_copy_datagram_iter
+               tcp_recvmsg
+               inet_recvmsg
+               sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     1.87%     0.00%             1  memcached  [kernel.kallsyms]      [k] tcp_rearm_rto
+            |
+            ---tcp_rearm_rto
+               |          
+                --1.87%--tcp_event_new_data_sent
+                          tcp_write_xmit
+                          |          
+                           --1.73%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     1.87%     1.70%            90  memcached  [kernel.kallsyms]      [k] __fget
+            |
+            ---__fget
+               __fget_light
+               |          
+               |--0.95%--__fdget
+               |          sockfd_lookup_light
+               |          __sys_sendmsg
+               |          sys_sendmsg
+               |          do_syscall_64
+               |          entry_SYSCALL_64_after_hwframe
+               |          __libc_sendmsg
+               |          0
+               |          
+                --0.92%--__fdget_pos
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     1.87%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_rearm_rto.part.60
+            |
+            ---tcp_rearm_rto.part.60
+               tcp_rearm_rto
+               tcp_event_new_data_sent
+               tcp_write_xmit
+               |          
+                --1.73%--__tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.83%     0.20%            11  memcached  [kernel.kallsyms]      [k] tasklet_action
+            |
+            ---tasklet_action
+               __softirqentry_text_start
+               |          
+                --1.79%--irq_exit
+                          do_IRQ
+                          ret_from_intr
+
+     1.81%     0.41%            21  memcached  [kernel.kallsyms]      [k] sockfd_lookup_light
+            |
+            ---sockfd_lookup_light
+               |          
+                --1.71%--__sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.81%     0.26%            14  memcached  [kernel.kallsyms]      [k] copy_msghdr_from_user
+            |
+            ---copy_msghdr_from_user
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     1.80%     1.64%            89  memcached  memcached              [.] resp_start
+            |
+            ---resp_start
+
+     1.75%     1.35%            73  memcached  libpthread-2.27.so     [.] __pthread_mutex_lock
+            |
+            ---__pthread_mutex_lock
+
+     1.71%     1.71%            80  memcached  [kernel.kallsyms]      [k] native_queued_spin_lock_slowpath
+            |
+            ---native_queued_spin_lock_slowpath
+               |          
+                --1.32%--_raw_spin_lock_bh
+                          lock_sock_nested
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.68%     0.00%             0  memcached  [kernel.kallsyms]      [k] tcp_tsq_handler.part.42
+            |
+            ---tcp_tsq_handler.part.42
+               |          
+                --1.42%--tcp_tasklet_func
+                          tasklet_action
+                          __softirqentry_text_start
+                          |          
+                           --1.38%--irq_exit
+                                     do_IRQ
+                                     ret_from_intr
+
+     1.63%     0.21%            11  memcached  [kernel.kallsyms]      [k] tcp_write_timer
+            |
+            ---tcp_write_timer
+               call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --1.55%--irq_exit
+                          |          
+                           --1.53%--smp_apic_timer_interrupt
+                                     apic_timer_interrupt
+
+     1.63%     0.10%             5  memcached  [kernel.kallsyms]      [k] tcp_tasklet_func
+            |
+            ---tcp_tasklet_func
+               tasklet_action
+               __softirqentry_text_start
+               |          
+                --1.59%--irq_exit
+                          do_IRQ
+                          ret_from_intr
+
+     1.44%     0.23%            12  memcached  [kernel.kallsyms]      [k] __fdget
+            |
+            ---__fdget
+               |          
+                --1.25%--sockfd_lookup_light
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.41%     0.67%            36  memcached  [kernel.kallsyms]      [k] __local_bh_enable_ip
+            |
+            ---__local_bh_enable_ip
+               |          
+                --0.60%--_raw_spin_unlock_bh
+
+     1.36%     0.59%            31  memcached  [kernel.kallsyms]      [k] aa_sock_msg_perm
+            |
+            ---aa_sock_msg_perm
+               |          
+                --0.77%--apparmor_socket_sendmsg
+                          security_socket_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.34%     0.00%             0  memcached  [kernel.kallsyms]      [k] __kfree_skb
+            |
+            ---__kfree_skb
+               |          
+                --1.15%--tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     1.33%     1.15%            62  memcached  memcached              [.] MurmurHash3_x86_32
+            |
+            ---MurmurHash3_x86_32
+
+     1.32%     0.25%            14  memcached  [kernel.kallsyms]      [k] security_socket_sendmsg
+            |
+            ---security_socket_sendmsg
+               |          
+                --1.24%--sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.26%     0.84%             5  memcached  [kernel.kallsyms]      [k] tcp_ack
+            |
+            ---tcp_ack
+               tcp_rcv_established
+               tcp_v4_do_rcv
+               |          
+                --1.21%--tcp_v4_rcv
+                          ip_local_deliver_finish
+                          ip_local_deliver
+                          ip_rcv_finish
+                          ip_rcv
+                          __netif_receive_skb_core
+                          __netif_receive_skb
+                          netif_receive_skb_internal
+                          napi_gro_receive
+                          ixgbe_poll
+                          net_rx_action
+                          __softirqentry_text_start
+                          |          
+                           --1.02%--irq_exit
+                                     do_IRQ
+                                     ret_from_intr
+                                     |          
+                                      --0.64%--tcp_v4_md5_lookup
+                                                tcp_current_mss
+                                                tcp_send_mss
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     1.25%     0.04%             2  memcached  [kernel.kallsyms]      [k] skb_release_all
+            |
+            ---skb_release_all
+               |          
+                --0.89%--__kfree_skb
+                          |          
+                           --0.77%--tcp_recvmsg
+                                     inet_recvmsg
+                                     sock_recvmsg
+                                     sock_read_iter
+                                     new_sync_read
+                                     __vfs_read
+                                     vfs_read
+                                     sys_read
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_read
+
+     1.24%     1.12%            60  memcached  memcached              [.] process_get_command.constprop.24
+            |
+            ---process_get_command.constprop.24
+
+     1.19%     0.29%            15  memcached  [kernel.kallsyms]      [k] rw_verify_area
+            |
+            ---rw_verify_area
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     1.18%     0.93%            46  memcached  libpthread-2.27.so     [.] __pthread_mutex_unlock
+            |
+            ---__pthread_mutex_unlock
+
+     1.18%     1.02%            48  memcached  [kernel.kallsyms]      [k] tcp_established_options
+            |
+            ---tcp_established_options
+               |          
+                --0.67%--tcp_current_mss
+                          |          
+                           --0.60%--tcp_send_mss
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     1.15%     0.50%            27  memcached  [kernel.kallsyms]      [k] skb_entail
+            |
+            ---skb_entail
+               |          
+                --1.13%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.15%     0.12%             7  memcached  [kernel.kallsyms]      [k] import_iovec
+            |
+            ---import_iovec
+               copy_msghdr_from_user
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     1.09%     0.98%            53  memcached  memcached              [.] drive_machine
+            |
+            ---drive_machine
+               0x1e8f8
+
+     1.07%     0.22%            11  memcached  [kernel.kallsyms]      [k] apparmor_socket_sendmsg
+            |
+            ---apparmor_socket_sendmsg
+               |          
+                --0.90%--security_socket_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.06%     0.06%             4  memcached  [kernel.kallsyms]      [k] __fdget_pos
+            |
+            ---__fdget_pos
+               |          
+                --1.03%--sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     1.06%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_write_timer_handler
+            |
+            ---tcp_write_timer_handler
+               tcp_write_timer
+               call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --1.02%--irq_exit
+                          smp_apic_timer_interrupt
+                          apic_timer_interrupt
+
+     1.02%     1.02%            55  memcached  [kernel.kallsyms]      [k] __indirect_thunk_start
+            |
+            ---__indirect_thunk_start
+
+     0.97%     0.14%             8  memcached  [kernel.kallsyms]      [k] rw_copy_check_uvector
+            |
+            ---rw_copy_check_uvector
+               import_iovec
+               copy_msghdr_from_user
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.95%     0.19%            10  memcached  [kernel.kallsyms]      [k] __kmalloc_reserve.isra.43
+            |
+            ---__kmalloc_reserve.isra.43
+               __alloc_skb
+               |          
+                --0.91%--sk_stream_alloc_skb
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.95%     0.13%             7  memcached  [kernel.kallsyms]      [k] _copy_to_iter
+            |
+            ---_copy_to_iter
+               |          
+                --0.93%--skb_copy_datagram_iter
+                          tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     0.93%     0.85%            24  memcached  memcached              [.] transmit
+            |
+            ---transmit
+
+     0.92%     0.26%            14  memcached  [kernel.kallsyms]      [k] tcp_v4_md5_lookup
+            |
+            ---tcp_v4_md5_lookup
+               |          
+                --0.82%--tcp_current_mss
+                          |          
+                           --0.80%--tcp_send_mss
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.90%     0.80%            42  memcached  [kernel.kallsyms]      [k] __skb_clone
+            |
+            ---__skb_clone
+               |          
+                --0.86%--skb_clone
+                          __tcp_transmit_skb
+                          |          
+                           --0.76%--tcp_write_xmit
+                                     |          
+                                      --0.68%--__tcp_push_pending_frames
+                                                tcp_push
+                                                tcp_sendmsg_locked
+                                                tcp_sendmsg
+                                                inet_sendmsg
+                                                sock_sendmsg
+                                                ___sys_sendmsg
+                                                __sys_sendmsg
+                                                sys_sendmsg
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __libc_sendmsg
+                                                0
+
+     0.89%     0.84%            45  memcached  [kernel.kallsyms]      [k] copy_user_enhanced_fast_string
+            |
+            ---copy_user_enhanced_fast_string
+               |          
+                --0.82%--_copy_to_iter
+                          skb_copy_datagram_iter
+                          tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     0.87%     0.01%             1  memcached  [kernel.kallsyms]      [k] skb_clone
+            |
+            ---skb_clone
+               __tcp_transmit_skb
+               |          
+                --0.78%--tcp_write_xmit
+                          |          
+                           --0.70%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.87%     0.13%             8  memcached  [kernel.kallsyms]      [k] security_file_permission
+            |
+            ---security_file_permission
+               rw_verify_area
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     0.84%     0.00%             0  memcached  [kernel.kallsyms]      [k] tcp_send_loss_probe
+            |
+            ---tcp_send_loss_probe
+               tcp_write_timer_handler
+               tcp_write_timer
+               call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --0.83%--irq_exit
+                          smp_apic_timer_interrupt
+                          apic_timer_interrupt
+
+     0.82%     0.73%            39  memcached  memcached              [.] process_command
+            |
+            ---process_command
+
+     0.81%     0.00%             0  memcached  [unknown]              [.] 0x373734392d726569
+            |
+            ---0x373734392d726569
+
+     0.81%     0.17%             9  memcached  [kernel.kallsyms]      [k] tcp_schedule_loss_probe
+            |
+            ---tcp_schedule_loss_probe
+               |          
+                --0.62%--tcp_write_xmit
+                          |          
+                           --0.51%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.78%     0.00%             0  memcached  [unknown]              [.] 0x303538382d726569
+            |
+            ---0x303538382d726569
+
+     0.77%     0.17%             9  memcached  [kernel.kallsyms]      [k] _raw_spin_unlock_bh
+            |
+            ---_raw_spin_unlock_bh
+               |          
+                --0.52%--release_sock
+
+     0.77%     0.67%            37  memcached  [kernel.kallsyms]      [k] aa_sk_perm
+            |
+            ---aa_sk_perm
+               |          
+                --0.73%--aa_sock_msg_perm
+                          |          
+                           --0.65%--apparmor_socket_sendmsg
+                                     security_socket_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.74%     0.00%             0  memcached  [unknown]              [.] 0x343738312d726569
+            |
+            ---0x343738312d726569
+
+     0.72%     0.46%            24  memcached  [kernel.kallsyms]      [k] __kmalloc_node_track_caller
+            |
+            ---__kmalloc_node_track_caller
+               __kmalloc_reserve.isra.43
+               __alloc_skb
+               sk_stream_alloc_skb
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.72%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_softirq.part.17
+            |
+            ---do_softirq.part.17
+               __local_bh_enable_ip
+
+     0.72%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_softirq_own_stack
+            |
+            ---do_softirq_own_stack
+               do_softirq.part.17
+               __local_bh_enable_ip
+
+     0.72%     0.13%             7  memcached  [kernel.kallsyms]      [k] lock_timer_base
+            |
+            ---lock_timer_base
+               |          
+                --0.70%--mod_timer
+                          sk_reset_timer
+
+     0.71%     0.08%             4  memcached  [kernel.kallsyms]      [k] __tcp_retransmit_skb
+            |
+            ---__tcp_retransmit_skb
+               tcp_send_loss_probe
+               tcp_write_timer_handler
+               tcp_write_timer
+               call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --0.69%--irq_exit
+                          smp_apic_timer_interrupt
+                          apic_timer_interrupt
+
+     0.70%     0.35%            19  memcached  [kernel.kallsyms]      [k] _copy_from_iter_full
+            |
+            ---_copy_from_iter_full
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.69%     0.59%            31  memcached  memcached              [.] conn_set_state.isra.1
+            |
+            ---conn_set_state.isra.1
+
+     0.68%     0.00%             0  memcached  [unknown]              [.] 0x373334362d726569
+            |
+            ---0x373334362d726569
+
+     0.68%     0.68%            36  memcached  [kernel.kallsyms]      [k] entry_SYSCALL_64_stage2
+            |
+            ---entry_SYSCALL_64_stage2
+               |          
+                --0.63%--__libc_sendmsg
+                          |          
+                           --0.57%--0
+
+     0.68%     0.00%             0  memcached  [unknown]              [.] 0x353834372d726569
+            |
+            ---0x353834372d726569
+
+     0.68%     0.00%             0  memcached  [kernel.kallsyms]      [k] tcp_send_ack
+            |
+            ---tcp_send_ack
+
+     0.68%     0.02%             1  memcached  [kernel.kallsyms]      [k] __tcp_send_ack.part.39
+            |
+            ---__tcp_send_ack.part.39
+               tcp_send_ack
+
+     0.65%     0.23%            13  memcached  [kernel.kallsyms]      [k] sk_page_frag_refill
+            |
+            ---sk_page_frag_refill
+               |          
+                --0.59%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.62%     0.00%             0  memcached  [unknown]              [.] 0x353734332d726569
+            |
+            ---0x353734332d726569
+
+     0.62%     0.26%             8  memcached  [kernel.kallsyms]      [k] netdev_pick_tx
+            |
+            ---netdev_pick_tx
+               |          
+                --0.58%--__dev_queue_xmit
+                          dev_queue_xmit
+                          ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+
+     0.61%     0.44%            24  memcached  [kernel.kallsyms]      [k] _raw_spin_lock_irqsave
+            |
+            ---_raw_spin_lock_irqsave
+               |          
+                --0.58%--lock_timer_base
+                          mod_timer
+                          sk_reset_timer
+
+     0.59%     0.15%             8  memcached  [kernel.kallsyms]      [k] skb_release_head_state
+            |
+            ---skb_release_head_state
+               |          
+                --0.57%--skb_release_all
+
+     0.59%     0.13%             7  memcached  [kernel.kallsyms]      [k] skb_release_data
+            |
+            ---skb_release_data
+               skb_release_all
+               |          
+                --0.55%--__kfree_skb
+
+     0.59%     0.48%            25  memcached  [kernel.kallsyms]      [k] fsnotify
+            |
+            ---fsnotify
+               security_file_permission
+               rw_verify_area
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     0.58%     0.49%            26  memcached  [kernel.kallsyms]      [k] check_stack_object
+            |
+            ---check_stack_object
+
+     0.57%     0.06%             3  memcached  [kernel.kallsyms]      [k] validate_xmit_skb_list
+            |
+            ---validate_xmit_skb_list
+               |          
+                --0.55%--sch_direct_xmit
+                          __dev_queue_xmit
+                          dev_queue_xmit
+                          ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+
+     0.56%     0.52%            28  memcached  [kernel.kallsyms]      [k] tcp_poll
+            |
+            ---tcp_poll
+               sock_poll
+               ep_item_poll.isra.12
+               ep_send_events_proc
+               ep_scan_ready_list.constprop.17
+               ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               0x100000000
+
+     0.55%     0.19%            10  memcached  [kernel.kallsyms]      [k] kmem_cache_alloc_node
+            |
+            ---kmem_cache_alloc_node
+               |          
+                --0.53%--__alloc_skb
+                          sk_stream_alloc_skb
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.55%     0.17%             9  memcached  [kernel.kallsyms]      [k] __ip_local_out
+            |
+            ---__ip_local_out
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+
+     0.53%     0.45%            24  memcached  libpthread-2.27.so     [.] __pthread_disable_asynccancel
+            |
+            ---__pthread_disable_asynccancel
+
+     0.52%     0.34%            18  memcached  [kernel.kallsyms]      [k] tcp_rcv_space_adjust
+            |
+            ---tcp_rcv_space_adjust
+               tcp_recvmsg
+               inet_recvmsg
+               sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     0.51%     0.02%             1  memcached  [kernel.kallsyms]      [k] tcp_delack_timer
+            |
+            ---tcp_delack_timer
+               call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+
+     0.51%     0.07%             4  memcached  [kernel.kallsyms]      [k] security_socket_recvmsg
+            |
+            ---security_socket_recvmsg
+
+     0.51%     0.09%             7  memcached  [kernel.kallsyms]      [k] swapgs_restore_regs_and_return_to_usermode
+            |
+            ---swapgs_restore_regs_and_return_to_usermode
+
+     0.50%     0.46%            24  memcached  [kernel.kallsyms]      [k] copy_user_generic_unrolled
+            |
+            ---copy_user_generic_unrolled
+
+     0.50%     0.44%            24  memcached  [kernel.kallsyms]      [k] tcp_cwnd_restart
+     0.49%     0.00%             0  memcached  [unknown]              [.] 0x373434322d726569
+     0.48%     0.00%             0  memcached  [unknown]              [.] 0x303531352d726569
+     0.48%     0.20%            11  memcached  [kernel.kallsyms]      [k] tcp_release_cb
+     0.48%     0.46%            26  memcached  [kernel.kallsyms]      [k] tcp_stream_memory_free
+     0.48%     0.00%             0  memcached  [unknown]              [.] 0x383533322d726569
+     0.48%     0.02%             1  memcached  [kernel.kallsyms]      [k] skb_free_head
+     0.48%     0.00%             0  memcached  [kernel.kallsyms]      [k] apparmor_socket_recvmsg
+     0.48%     0.02%             1  memcached  [kernel.kallsyms]      [k] handle_irq
+     0.47%     0.47%            25  memcached  memcached              [.] item_get
+     0.47%     0.17%             9  memcached  [kernel.kallsyms]      [k] validate_xmit_skb
+     0.46%     0.00%             0  memcached  [unknown]              [.] 0x373033362d726569
+     0.46%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_delack_timer_handler
+     0.46%     0.44%            24  memcached  memcached              [.] do_item_get
+     0.45%     0.07%             4  memcached  [kernel.kallsyms]      [k] kfree_skbmem
+     0.44%     0.00%             0  memcached  [unknown]              [.] 0x363130372d726569
+     0.44%     0.44%            25  memcached  [kernel.kallsyms]      [k] ksize
+     0.44%     0.07%             4  memcached  [kernel.kallsyms]      [k] page_frag_free
+     0.44%     0.32%            17  memcached  memcached              [.] assoc_find
+     0.44%     0.00%             0  memcached  [unknown]              [.] 0x343935332d726569
+     0.42%     0.00%             0  memcached  [unknown]              [.] 0x313435392d726569
+     0.42%     0.36%            20  memcached  libevent-2.1.so.6.0.2  [.] evmap_io_active_
+     0.42%     0.04%             2  memcached  [kernel.kallsyms]      [k] handle_edge_irq
+     0.42%     0.38%            20  memcached  [kernel.kallsyms]      [k] tcp_recv_timestamp
+     0.41%     0.41%            22  memcached  [kernel.kallsyms]      [k] skb_page_frag_refill
+     0.41%     0.41%            22  memcached  [kernel.kallsyms]      [k] prepare_exit_to_usermode
+     0.40%     0.00%             0  memcached  [unknown]              [.] 0x303136382d726569
+     0.40%     0.04%             2  memcached  [kernel.kallsyms]      [k] napi_consume_skb
+     0.40%     0.00%             0  memcached  [unknown]              [.] 0x343930392d726569
+     0.39%     0.02%             1  memcached  [kernel.kallsyms]      [k] __sk_mem_schedule
+     0.38%     0.00%             0  memcached  [unknown]              [.] 0x343537312d726569
+     0.38%     0.34%            18  memcached  [kernel.kallsyms]      [k] ip_send_check
+     0.38%     0.30%            16  memcached  [kernel.kallsyms]      [k] ipv4_mtu
+     0.37%     0.33%            18  memcached  [kernel.kallsyms]      [k] __sk_mem_raise_allocated
+     0.36%     0.14%             7  memcached  [kernel.kallsyms]      [k] ___slab_alloc
+     0.36%     0.00%             0  memcached  [unknown]              [.] 0x343236392d726569
+     0.36%     0.00%             0  memcached  [kernel.kallsyms]      [k] __slab_alloc
+     0.36%     0.32%            17  memcached  [kernel.kallsyms]      [k] __virt_addr_valid
+     0.35%     0.13%             7  memcached  [kernel.kallsyms]      [k] sched_clock_cpu
+     0.35%     0.00%             0  memcached  [unknown]              [.] 0x393135322d726569
+     0.35%     0.16%            10  memcached  [kernel.kallsyms]      [k] kmem_cache_free
+     0.35%     0.00%             0  memcached  [unknown]              [.] 0x313734392d726569
+     0.33%     0.06%             3  memcached  [kernel.kallsyms]      [k] free_unref_page
+     0.32%     0.10%             5  memcached  [kernel.kallsyms]      [k] ixgbe_select_queue
+     0.32%     0.00%             0  memcached  [unknown]              [.] 0x303632372d726569
+     0.32%     0.32%            17  memcached  memcached              [.] resp_finish
+     0.32%     0.32%            17  memcached  [kernel.kallsyms]      [k] swiotlb_map_page
+     0.31%     0.00%             0  memcached  [unknown]              [.] 0x373235332d726569
+     0.31%     0.31%            16  memcached  libc-2.27.so           [.] __strlen_avx2
+     0.29%     0.24%            13  memcached  memcached              [.] _transmit_post
+     0.29%     0.11%             6  memcached  [kernel.kallsyms]      [k] tcp_clean_rtx_queue
+     0.28%     0.00%             0  memcached  [kernel.kallsyms]      [k] __tcp_ack_snd_check
+     0.28%     0.24%            13  memcached  memcached              [.] do_item_alloc
+     0.27%     0.25%            14  memcached  [kernel.kallsyms]      [k] kfree
+     0.27%     0.27%            14  memcached  [kernel.kallsyms]      [k] __netdev_pick_tx
+     0.27%     0.25%            13  memcached  memcached              [.] conn_release_items
+     0.26%     0.00%             0  memcached  [unknown]              [.] 0x333835372d726569
+     0.26%     0.00%             0  memcached  [kernel.kallsyms]      [k] __release_sock
+     0.26%     0.11%             6  memcached  [kernel.kallsyms]      [k] __cgroup_bpf_run_filter_skb
+     0.25%     0.00%             0  memcached  [unknown]              [.] 0x0000000500000000
+     0.25%     0.11%             6  memcached  [kernel.kallsyms]      [k] __slab_free
+     0.25%     0.25%            13  memcached  [kernel.kallsyms]      [k] native_irq_return_iret
+     0.25%     0.25%            14  memcached  memcached              [.] do_cache_free
+     0.24%     0.23%            13  memcached  [kernel.kallsyms]      [k] rcu_all_qs
+     0.24%     0.15%             8  memcached  [kernel.kallsyms]      [k] netif_skb_features
+     0.24%     0.00%             0  memcached  [unknown]              [.] 0x343937342d726569
+     0.24%     0.03%             2  memcached  [kernel.kallsyms]      [k] tcp_v4_send_check
+     0.23%     0.15%             8  memcached  [kernel.kallsyms]      [k] tcp_wfree
+     0.23%     0.00%             0  memcached  [kernel.kallsyms]      [k] handle_irq_event
+     0.23%     0.00%             0  memcached  [kernel.kallsyms]      [k] handle_irq_event_percpu
+     0.23%     0.23%            12  memcached  [kernel.kallsyms]      [k] __tcp_v4_send_check
+     0.23%     0.23%            12  memcached  memcached              [.] try_read_command_ascii
+     0.22%     0.04%             2  memcached  [kernel.kallsyms]      [k] sched_clock
+     0.22%     0.20%            11  memcached  [kernel.kallsyms]      [k] tcp_cleanup_rbuf
+     0.22%     0.22%            12  memcached  [kernel.kallsyms]      [k] sock_rfree
+     0.21%     0.04%             2  memcached  [kernel.kallsyms]      [k] free_unref_page_commit
+     0.21%     0.21%            11  memcached  [kernel.kallsyms]      [k] ipv4_dst_check
+     0.21%     0.00%             0  memcached  [unknown]              [.] 0x303836392d726569
+     0.21%     0.08%             5  memcached  [kernel.kallsyms]      [k] __handle_irq_event_percpu
+     0.21%     0.11%             6  memcached  [kernel.kallsyms]      [k] _cond_resched
+     0.21%     0.00%             0  memcached  [unknown]              [.] 0x303337382d726569
+     0.21%     0.21%            11  memcached  [kernel.kallsyms]      [k] native_sched_clock
+     0.20%     0.14%             8  memcached  [kernel.kallsyms]      [k] fput
+     0.19%     0.19%             2  memcached  [kernel.kallsyms]      [k] tcp_event_data_recv
+     0.19%     0.13%             7  memcached  memcached              [.] _transmit_pre
+     0.19%     0.17%             9  memcached  [kernel.kallsyms]      [k] new_slab
+     0.19%     0.00%             0  memcached  [unknown]              [.] 0x383035372d726569
+     0.18%     0.18%            10  memcached  memcached              [.] do_cache_alloc
+     0.18%     0.17%             9  memcached  [kernel.kallsyms]      [k] ip_copy_addrs
+     0.17%     0.17%             9  memcached  [kernel.kallsyms]      [k] _copy_from_user
+     0.17%     0.17%             9  memcached  [kernel.kallsyms]      [k] free_pcppages_bulk
+     0.17%     0.00%             0  memcached  [kernel.kallsyms]      [k] __sk_mem_reclaim
+     0.17%     0.17%             9  memcached  [kernel.kallsyms]      [k] __sk_mem_reduce_allocated
+     0.17%     0.11%             6  memcached  memcached              [.] process_update_command
+     0.17%     0.15%             9  memcached  [kernel.kallsyms]      [k] iov_iter_advance
+     0.17%     0.00%             0  memcached  [unknown]              [.] 0x313034382d726569
+     0.17%     0.15%             8  memcached  [kernel.kallsyms]      [k] prefetch_freepointer
+     0.17%     0.15%             8  memcached  libc-2.27.so           [.] __memchr_avx2
+     0.15%     0.15%             8  memcached  [kernel.kallsyms]      [k] tcp_rate_check_app_limited
+     0.15%     0.15%             8  memcached  libc-2.27.so           [.] __GI_____strtoull_l_internal
+     0.15%     0.04%             3  memcached  [kernel.kallsyms]      [k] common_file_perm
+     0.15%     0.02%             1  memcached  [kernel.kallsyms]      [k] apparmor_file_permission
+     0.15%     0.13%             7  memcached  libc-2.27.so           [.] __memcmp_avx2_movbe
+     0.15%     0.00%             0  memcached  [unknown]              [.] 0x7878787878787878
+     0.15%     0.13%             7  memcached  libpthread-2.27.so     [.] __pthread_enable_asynccancel
+     0.15%     0.15%             8  memcached  [kernel.kallsyms]      [k] __internal_add_timer
+     0.14%     0.14%             8  memcached  [kernel.kallsyms]      [k] __tcp_select_window
+     0.14%     0.00%             0  memcached  [kernel.kallsyms]      [k] tcp_data_queue
+     0.14%     0.00%             0  memcached  [kernel.kallsyms]      [k] page_fault
+     0.14%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_page_fault
+     0.13%     0.13%             7  memcached  memcached              [.] pthread_mutex_unlock@plt
+     0.13%     0.13%             7  memcached  [kernel.kallsyms]      [k] copyin
+     0.13%     0.13%             7  memcached  [kernel.kallsyms]      [k] tcp_tx_timestamp
+     0.13%     0.13%             7  memcached  [kernel.kallsyms]      [k] tcp_tso_segs
+     0.13%     0.13%             7  memcached  libc-2.27.so           [.] __GI_____strtoll_l_internal
+     0.13%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_v4_early_demux
+     0.12%     0.00%             0  memcached  [unknown]              [.] 0x0006ad86000f4240
+     0.12%     0.12%             6  memcached  [kernel.kallsyms]      [k] switch_to_thread_stack
+     0.12%     0.00%             0  memcached  [kernel.kallsyms]      [k] __do_page_fault
+     0.12%     0.00%             0  memcached  [kernel.kallsyms]      [k] handle_mm_fault
+     0.12%     0.12%             1  memcached  [kernel.kallsyms]      [k] __handle_mm_fault
+     0.12%     0.00%             0  memcached  memcached              [.] do_item_crawl_q
+     0.12%     0.00%             0  memcached  [unknown]              [.] 0x393039392d726569
+     0.11%     0.11%             6  memcached  memcached              [.] pthread_mutex_lock@plt
+     0.11%     0.02%             1  memcached  [kernel.kallsyms]      [k] ixgbe_msix_clean_rings
+     0.11%     0.06%             3  memcached  [kernel.kallsyms]      [k] irq_chip_ack_parent
+     0.11%     0.07%             4  memcached  [kernel.kallsyms]      [k] aa_file_perm
+     0.11%     0.09%             5  memcached  libevent-2.1.so.6.0.2  [.] event_callback_activate_nolock_
+     0.11%     0.04%             2  memcached  [kernel.kallsyms]      [k] sock_def_readable
+     0.11%     0.09%             5  memcached  [kernel.kallsyms]      [k] tcp_md5_do_lookup
+     0.10%     0.10%             5  memcached  [kernel.kallsyms]      [k] ixgbe_tx_ctxtdesc
+     0.10%     0.08%             4  memcached  memcached              [.] do_item_link_q
+     0.10%     0.10%             5  memcached  [kernel.kallsyms]      [k] __copy_skb_header
+     0.10%     0.06%             3  memcached  [kernel.kallsyms]      [k] _raw_spin_lock_irq
+     0.10%     0.04%             2  memcached  [kernel.kallsyms]      [k] _raw_spin_unlock_irqrestore
+     0.09%     0.08%             4  memcached  [kernel.kallsyms]      [k] cmpxchg_double_slab.isra.33
+     0.09%     0.09%             5  memcached  memcached              [.] store_item
+     0.09%     0.09%             5  memcached  [kernel.kallsyms]      [k] tcp_rbtree_insert
+     0.09%     0.09%             5  memcached  [kernel.kallsyms]      [k] ixgbe_update_itr.isra.60
+     0.08%     0.08%             4  memcached  memcached              [.] item_link_q
+     0.08%     0.08%             4  memcached  [kernel.kallsyms]      [k] rb_last
+     0.08%     0.08%             4  memcached  [kernel.kallsyms]      [k] napi_schedule_prep
+     0.08%     0.06%             3  memcached  [kernel.kallsyms]      [k] __sk_dst_check
+     0.08%     0.00%             0  memcached  [unknown]              [.] 0x343034322d726569
+     0.08%     0.08%             4  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e7d9
+     0.08%     0.08%             4  memcached  [kernel.kallsyms]      [k] skb_network_protocol
+     0.08%     0.08%             4  memcached  [kernel.kallsyms]      [k] validate_xmit_xfrm
+     0.07%     0.00%             0  memcached  [unknown]              [.] 0x0000564ac2fab710
+     0.07%     0.00%             0  memcached  [unknown]              [.] 0x353733362d726569
+     0.07%     0.06%             3  memcached  [kernel.kallsyms]      [k] apic_ack_irq
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] hrtimer_interrupt
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] __hrtimer_run_queues
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] tick_sched_timer
+     0.07%     0.07%             4  memcached  [kernel.kallsyms]      [k] common_interrupt
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] __wake_up_sync_key
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] __wake_up_common_lock
+     0.07%     0.05%             3  memcached  [kernel.kallsyms]      [k] __inet_lookup_established
+     0.06%     0.06%             3  memcached  [kernel.kallsyms]      [k] sock_zerocopy_put
+     0.06%     0.06%             3  memcached  [kernel.kallsyms]      [k] dql_completed
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x343730322d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x383134372d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x323535382d726569
+     0.06%     0.06%             3  memcached  [kernel.kallsyms]      [k] bictcp_cwnd_event
+     0.06%     0.04%             2  memcached  memcached              [.] tcp_sendmsg
+     0.06%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_chrono_start
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x373238322d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x343630322d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x393136362d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x303730322d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x343730382d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x363538342d726569
+     0.06%     0.06%             3  memcached  [kernel.kallsyms]      [k] __tasklet_schedule
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x353038342d726569
+     0.06%     0.06%             3  memcached  memcached              [.] do_item_unlink
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x333735392d726569
+     0.06%     0.06%             3  memcached  [kernel.kallsyms]      [k] __usecs_to_jiffies
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x343832312d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x393832362d726569
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x353937372d726569
+     0.06%     0.00%             0  memcached  [kernel.kallsyms]      [k] build_skb
+     0.06%     0.02%             1  memcached  [kernel.kallsyms]      [k] __build_skb
+     0.06%     0.06%             3  memcached  memcached              [.] safe_strtoul
+     0.06%     0.00%             0  memcached  [unknown]              [.] 0x343132382d726569
+     0.05%     0.02%             1  memcached  [kernel.kallsyms]      [k] dev_gro_receive
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] rb_first
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] tcp_options_write
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x373234372d726569
+     0.05%     0.01%             1  memcached  [kernel.kallsyms]      [k] put_cpu_partial
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x393637332d726569
+     0.05%     0.04%             2  memcached  [kernel.kallsyms]      [k] __wake_up_common
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x393336382d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x363230352d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x74697728206c6c6f
+     0.04%     0.00%             0  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000028b20
+     0.04%     0.04%             3  memcached  libevent-2.1.so.6.0.2  [.] event_active_nolock_
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373834382d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x363932382d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373531322d726569
+     0.04%     0.04%             2  memcached  memcached              [.] do_item_link
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x393031392d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x383232362d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x393438372d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x333532362d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373331372d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x323335312d726569
+     0.04%     0.04%             2  memcached  memcached              [.] out_string
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] __napi_schedule_irqoff
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] skb_put
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x363233342d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x363036362d726569
+     0.04%     0.04%             2  memcached  memcached              [.] slabs_alloc
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x0036343735353838
+     0.04%     0.00%             0  memcached  [kernel.kallsyms]      [k] unfreeze_partials.isra.72
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] trigger_dyntick_cpu.isra.35
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] calc_wheel_index
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x363234392d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x393432342d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x383331322d726569
+     0.04%     0.04%             2  memcached  memcached              [.] do_store_item
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x0000564ac2fab560
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373539342d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373030332d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x333739392d726569
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] kmalloc_slab
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] get_partial_node.isra.73
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x383836362d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x363630382d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x313435342d726569
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_rate_gen
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x353538342d726569
+     0.04%     0.04%             2  memcached  memcached              [.] item_is_flushed
+     0.04%     0.00%             0  memcached  [kernel.kallsyms]      [k] tick_sched_do_timer
+     0.04%     0.00%             0  memcached  [kernel.kallsyms]      [k] tick_do_update_jiffies64.part.11
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x303639362d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x353336342d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x303739352d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373438392d726569
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] ixgbe_features_check
+     0.04%     0.04%             2  memcached  memcached              [.] assoc_delete
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x343439352d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x383033372d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x343431382d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373038342d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x0000000800000000
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x303935382d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x373038352d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x303333372d726569
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] swiotlb_dma_mapping_error
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] inet_ehashfn
+     0.04%     0.02%             1  memcached  [kernel.kallsyms]      [k] kmem_cache_alloc
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x393632342d726569
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] __x86_indirect_thunk_rcx
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x323232332d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x353534322d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x353435372d726569
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] tcp_init_cwnd
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x383532332d726569
+     0.04%     0.04%             2  memcached  memcached              [.] memcpy@plt
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x393338342d726569
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] copyout
+     0.04%     0.04%             2  memcached  [kernel.kallsyms]      [k] sk_forced_mem_schedule
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x303832372d726569
+     0.04%     0.00%             0  memcached  [unknown]              [.] 0x383639332d726569
+     0.03%     0.03%             2  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000019604
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383938382d726569
+     0.03%     0.02%             1  memcached  [kernel.kallsyms]      [k] inet_gro_receive
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] bictcp_acked
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x343039372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393137342d726569
+     0.03%     0.00%             0  memcached  [kernel.kallsyms]      [k] tick_sched_handle
+     0.03%     0.00%             0  memcached  [kernel.kallsyms]      [k] update_process_times
+     0.03%     0.00%             0  memcached  [kernel.kallsyms]      [k] scheduler_tick
+     0.03%     0.00%             0  memcached  [kernel.kallsyms]      [k] task_tick_fair
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x343236322d726569
+     0.02%     0.02%             2  memcached  memcached              [.] event_handler
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000001395e
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0a00313439333834
+     0.02%     0.02%             1  memcached  memcached              [.] do_slabs_alloc.isra.5
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x381750e000000548
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3a2458600000055c
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3adc9f6000000565
+     0.02%     0.02%             1  memcached  memcached              [.] memchr@plt
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303538372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333637382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000188d2
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333733352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3a6dff600000053d
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333236392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323139342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363036352d726569
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] discard_slab
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] __free_slab
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __free_pages
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000a2d0
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030363534383236
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313935382d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __x86_indirect_thunk_r14
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000017be8
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] swiotlb_sync_single_for_cpu
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323633392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313033332d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] rcu_bh_qs
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x39defc2000000547
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7835333434313238
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __sock_wfree
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] tcp_update_pacing_rate
+     0.02%     0.02%             1  memcached  memcached              [.] slabs_clsid
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000049b4
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343733322d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000029379
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383433332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00007fdd38175c20
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038353237333436
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363839332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363930312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3b4d886000000561
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353930352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313030312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000111c2
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383638332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000001bd9a
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343838322d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __cmpxchg_double_slab.isra.32
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x38d8204000000548
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363038382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393034312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343332392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000006320
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035343533373939
+     0.02%     0.02%             1  memcached  libc-2.27.so           [.] __ctype_b_loc
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034343134303534
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032373835383437
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363131312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353535382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313239332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034353636363038
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] skb_csum_hwoffload_help
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393632392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031363632363339
+     0.02%     0.02%             1  memcached  memcached              [.] do_slabs_free.isra.1
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343836312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303734342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313532392d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] detach_if_pending
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] native_iret
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353934362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000d857
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] sk_free
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000007541
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000de8d
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034313936323334
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383133352d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e6b4
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323936362d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] free_unref_page_prepare.part.65
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030343934373831
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030373838383337
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3a227fe00000055f
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000006e56
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353837322d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e6d2
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] rcu_irq_enter
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373030342d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] mod_node_page_state
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000010e52
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] free_pcp_prepare
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353238352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373633392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313333372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343035342d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] retint_kernel
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035303030313638
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] sk_filter_trim_cap
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333738352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3992a50000000538
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373439342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363437362d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] skb_clone_tx_timestamp
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e5b0
+     0.02%     0.02%             1  memcached  memcached              [.] update_event
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] tcp4_gro_receive
+     0.02%     0.02%             1  memcached  libc-2.27.so           [.] __memmove_avx_unaligned_erms
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7839353933343438
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323139352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393736322d726569
+     0.02%     0.00%             0  memcached  memcached              [.] item_stats_sizes_remove
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353438312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000172b7
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0033343038393639
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383239372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313337342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353430392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030303639363234
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] hrtimer_active
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000243e
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] irq_may_run
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303833342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035323538303337
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353236382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363236382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000001789b
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034363431343539
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393134372d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000002936e
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] iov_iter_init
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383235342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035373736343033
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343931372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000191c2
+     0.02%     0.02%             1  memcached  memcached              [.] resp_reset
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000001232b
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383435332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303933352d726569
+     0.02%     0.02%             1  memcached  memcached              [.] strlen@plt
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303238342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373735322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383338392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393636392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333730332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3980a08000000568
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030363238303734
+     0.02%     0.02%             1  memcached  memcached              [.] __errno_location@plt
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333236382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7835373938303537
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] find_vma
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001966e
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000462e
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303334352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313132372d726569
+     0.02%     0.02%             1  memcached  memcached              [.] rbuf_release
+     0.02%     0.02%             1  memcached  memcached              [.] safe_strtol
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343036372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034373933323638
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363638322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323236362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038303133373832
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000019663
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363935332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343632322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343131362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030313733323735
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000729b
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7835353039333638
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303339332d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] fq_codel_enqueue
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000001a7fc
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333834342d726569
+     0.02%     0.02%             1  memcached  memcached              [.] do_item_remove
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3866456000000547
+     0.02%     0.02%             1  memcached  memcached              [.] do_item_unlink_q
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323530342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7831323633303338
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3ae192e00000055a
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] get_nohz_timer_target
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323733342d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __raise_softirq_irqoff
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393939372d726569
+     0.02%     0.00%             0  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e631
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037303935343039
+     0.02%     0.02%             1  memcached  memcached              [.] item_free
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303239372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373535342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3af5c08000000558
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383737342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000c785
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323830392d726569
+     0.02%     0.02%             1  memcached  memcached              [.] STATS_UNLOCK
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e706
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037303039313734
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x39e49c200000055c
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313930312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000157cb
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e5bd
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363430312d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __check_heap_object
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000001acd9
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] tcp_rack_update_reo_wnd
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000072c5
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393539372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333137392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333938332d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] native_apic_mem_write
+     0.02%     0.02%             1  memcached  memcached              [.] read@plt
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343239312d726569
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x343736332d726569
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x303837322d726569
+     0.01%     0.00%             0  memcached  [kernel.kallsyms]      [k] update_load_avg
+     0.01%     0.01%             1  memcached  [kernel.kallsyms]      [k] __update_load_avg_se.isra.38
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x3907cac00000054b
+     0.01%     0.01%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e6cc
+     0.01%     0.01%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e7df
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x7836343331383434
+     0.01%     0.01%             1  memcached  [kernel.kallsyms]      [k] tcp_rate_skb_sent
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x383834322d726569
+     0.01%     0.01%             1  memcached  libc-2.27.so           [.] __GI_strtoul
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x313035392d726569
+     0.01%     0.00%             0  memcached  [kernel.kallsyms]      [k] __kfree_skb_flush
+     0.01%     0.00%             0  memcached  [kernel.kallsyms]      [k] kmem_cache_free_bulk
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x00007fdd3a290c20
+     0.01%     0.01%             1  memcached  [kernel.kallsyms]      [k] idle_cpu
+     0.01%     0.01%             1  memcached  [kernel.kallsyms]      [k] ep_poll_callback
+     0.01%     0.01%             1  memcached  [kernel.kallsyms]      [k] tcp_v4_inbound_md5_hash
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x00000000000062c5
+     0.01%     0.00%             0  memcached  [unknown]              [.] 0x363130362d726569
+     0.01%     0.00%             0  memcached  [kernel.kallsyms]      [k] __sched_text_start
+     0.01%     0.00%             0  memcached  [kernel.kallsyms]      [k] finish_task_switch
+     0.01%     0.00%             0  memcached  [kernel.kallsyms]      [k] schedule
+     0.00%     0.00%             0  memcached  [unknown]              [.] 0x0000564ac2f9f580
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] schedule_hrtimeout_range
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] schedule_hrtimeout_range_clock
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] __mmdrop
+     0.00%     0.00%             0  memcached  libc-2.27.so           [.] __nanosleep
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] sys_nanosleep
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] hrtimer_nanosleep
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_nanosleep
+     0.00%     0.00%             1  memcached  libc-2.27.so           [.] __libc_disable_asynccancel
+     0.00%     0.00%             1  memcached  [kernel.kallsyms]      [k] ipod_hook_fn
+     0.00%     0.00%             0  memcached  [unknown]              [.] 0x7834303939303431
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] __perf_event_task_sched_in
+     0.00%     0.00%             1  memcached  [kernel.kallsyms]      [k] intel_pmu_enable_all
+     0.00%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000002
+     0.00%     0.00%             0  memcached  libpthread-2.27.so     [.] pthread_cond_wait@@GLIBC_2.3.2
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] sys_futex
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_futex
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] futex_wait
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] futex_wait_queue_me
+     0.00%     0.00%             1  memcached  [kernel.kallsyms]      [k] pgd_free
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%     0.00%             3  memcached  [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.23
+     0.00%     0.00%            11  memcached  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%     0.00%            91  memcached  [kernel.kallsyms]      [k] native_write_msr
+     0.00%     0.00%             3  memcached  [kernel.kallsyms]      [k] intel_pmu_handle_irq
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] task_numa_fault
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] numa_migrate_preferred
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] task_numa_migrate
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] migrate_task_to
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] stop_one_cpu
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] exit_to_usermode_loop
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

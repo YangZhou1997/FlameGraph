@@ -1,0 +1,3098 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cycles:ppp'
+# Event count (approx.): 157407322744
+#
+# Children      Self       Samples  Command    Shared Object          Symbol                                        
+# ........  ........  ............  .........  .....................  ..............................................
+#
+    68.28%     0.00%             0  memcached  [unknown]              [.] 0000000000000000
+            |
+            ---0
+
+    66.12%     0.79%            47  memcached  libpthread-2.27.so     [.] __libc_sendmsg
+            |
+            ---__libc_sendmsg
+               |          
+                --66.02%--0
+
+    63.85%     1.52%            91  memcached  [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               |          
+               |--54.70%--__libc_sendmsg
+               |          |          
+               |           --54.60%--0
+               |          
+               |--8.06%--__libc_read
+               |          
+                --0.97%--epoll_wait
+                          |          
+                           --0.97%--0x100000000
+
+    62.20%    13.70%           819  memcached  [kernel.kallsyms]      [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --61.88%--entry_SYSCALL_64_after_hwframe
+                          |          
+                          |--52.91%--__libc_sendmsg
+                          |          0
+                          |          
+                          |--7.88%--__libc_read
+                          |          
+                           --0.97%--epoll_wait
+                                     |          
+                                      --0.97%--0x100000000
+
+    40.60%     0.32%            19  memcached  [kernel.kallsyms]      [k] sys_sendmsg
+            |
+            ---sys_sendmsg
+               |          
+                --40.31%--do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    40.05%     0.87%            52  memcached  [kernel.kallsyms]      [k] __sys_sendmsg
+            |
+            ---__sys_sendmsg
+               |          
+                --40.01%--sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    37.00%     1.11%            66  memcached  [kernel.kallsyms]      [k] ___sys_sendmsg
+            |
+            ---___sys_sendmsg
+               |          
+                --36.82%--__sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    33.43%     0.27%            16  memcached  [kernel.kallsyms]      [k] sock_sendmsg
+            |
+            ---sock_sendmsg
+               |          
+                --33.38%--___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    31.11%     0.40%            24  memcached  [kernel.kallsyms]      [k] inet_sendmsg
+            |
+            ---inet_sendmsg
+               |          
+                --31.04%--sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    30.52%     0.37%            22  memcached  [kernel.kallsyms]      [k] tcp_sendmsg
+            |
+            ---tcp_sendmsg
+               |          
+                --30.36%--inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    24.96%     3.36%           201  memcached  [kernel.kallsyms]      [k] tcp_sendmsg_locked
+            |
+            ---tcp_sendmsg_locked
+               |          
+                --24.76%--tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    11.19%     0.79%            47  memcached  [kernel.kallsyms]      [k] __tcp_transmit_skb
+            |
+            ---__tcp_transmit_skb
+               |          
+               |--8.00%--tcp_write_xmit
+               |          |          
+               |           --7.94%--__tcp_push_pending_frames
+               |                     tcp_push
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --3.17%--__tcp_send_ack.part.39
+                          tcp_send_ack
+                          |          
+                           --2.73%--tcp_delack_timer_handler
+                                     tcp_delack_timer
+                                     call_timer_fn
+                                     run_timer_softirq
+                                     __softirqentry_text_start
+                                     |          
+                                      --2.55%--irq_exit
+                                                smp_apic_timer_interrupt
+                                                apic_timer_interrupt
+
+    11.08%     0.40%            24  memcached  [kernel.kallsyms]      [k] tcp_push
+            |
+            ---tcp_push
+               |          
+                --10.93%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    10.64%     0.35%            21  memcached  [kernel.kallsyms]      [k] tcp_write_xmit
+            |
+            ---tcp_write_xmit
+               |          
+                --10.58%--__tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+    10.64%     0.03%             2  memcached  [kernel.kallsyms]      [k] __tcp_push_pending_frames
+            |
+            ---__tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     9.38%     0.17%            10  memcached  libpthread-2.27.so     [.] __libc_read
+            |
+            ---__libc_read
+
+     8.71%     0.50%            30  memcached  [kernel.kallsyms]      [k] ip_queue_xmit
+            |
+            ---ip_queue_xmit
+               |          
+                --8.60%--__tcp_transmit_skb
+                          |          
+                          |--6.11%--tcp_write_xmit
+                          |          |          
+                          |           --6.08%--__tcp_push_pending_frames
+                          |                     tcp_push
+                          |                     tcp_sendmsg_locked
+                          |                     tcp_sendmsg
+                          |                     inet_sendmsg
+                          |                     sock_sendmsg
+                          |                     ___sys_sendmsg
+                          |                     __sys_sendmsg
+                          |                     sys_sendmsg
+                          |                     do_syscall_64
+                          |                     entry_SYSCALL_64_after_hwframe
+                          |                     __libc_sendmsg
+                          |                     0
+                          |          
+                           --2.49%--__tcp_send_ack.part.39
+                                     tcp_send_ack
+                                     |          
+                                      --2.10%--tcp_delack_timer_handler
+                                                tcp_delack_timer
+                                                call_timer_fn
+                                                run_timer_softirq
+                                                __softirqentry_text_start
+                                                |          
+                                                 --1.93%--irq_exit
+                                                           smp_apic_timer_interrupt
+                                                           apic_timer_interrupt
+
+     7.77%     0.03%             2  memcached  [kernel.kallsyms]      [k] ip_local_out
+            |
+            ---ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+               |--5.55%--tcp_write_xmit
+               |          |          
+               |           --5.54%--__tcp_push_pending_frames
+               |                     tcp_push
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --2.22%--__tcp_send_ack.part.39
+                          tcp_send_ack
+                          |          
+                           --1.83%--tcp_delack_timer_handler
+                                     tcp_delack_timer
+                                     call_timer_fn
+                                     run_timer_softirq
+                                     __softirqentry_text_start
+                                     |          
+                                      --1.67%--irq_exit
+                                                smp_apic_timer_interrupt
+                                                apic_timer_interrupt
+
+     7.11%     0.20%            12  memcached  [kernel.kallsyms]      [k] ip_output
+            |
+            ---ip_output
+               |          
+                --7.07%--ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                          |--5.15%--tcp_write_xmit
+                          |          |          
+                          |           --5.13%--__tcp_push_pending_frames
+                          |                     tcp_push
+                          |                     tcp_sendmsg_locked
+                          |                     tcp_sendmsg
+                          |                     inet_sendmsg
+                          |                     sock_sendmsg
+                          |                     ___sys_sendmsg
+                          |                     __sys_sendmsg
+                          |                     sys_sendmsg
+                          |                     do_syscall_64
+                          |                     entry_SYSCALL_64_after_hwframe
+                          |                     __libc_sendmsg
+                          |                     0
+                          |          
+                           --1.92%--__tcp_send_ack.part.39
+                                     tcp_send_ack
+                                     |          
+                                      --1.57%--tcp_delack_timer_handler
+                                                tcp_delack_timer
+                                                call_timer_fn
+                                                run_timer_softirq
+                                                __softirqentry_text_start
+                                                |          
+                                                 --1.43%--irq_exit
+                                                           smp_apic_timer_interrupt
+                                                           apic_timer_interrupt
+
+     6.85%     0.12%             7  memcached  [kernel.kallsyms]      [k] ip_finish_output
+            |
+            ---ip_finish_output
+               ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+               |--5.02%--tcp_write_xmit
+               |          |          
+               |           --5.00%--__tcp_push_pending_frames
+               |                     tcp_push
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --1.84%--__tcp_send_ack.part.39
+                          tcp_send_ack
+                          |          
+                           --1.48%--tcp_delack_timer_handler
+                                     tcp_delack_timer
+                                     call_timer_fn
+                                     run_timer_softirq
+                                     __softirqentry_text_start
+                                     |          
+                                      --1.35%--irq_exit
+                                                smp_apic_timer_interrupt
+                                                apic_timer_interrupt
+
+     6.71%     0.10%             6  memcached  [kernel.kallsyms]      [k] sys_read
+            |
+            ---sys_read
+               |          
+                --6.69%--do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     6.40%     0.77%            46  memcached  [kernel.kallsyms]      [k] ip_finish_output2
+            |
+            ---ip_finish_output2
+               |          
+                --6.39%--ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                          |--4.73%--tcp_write_xmit
+                          |          |          
+                          |           --4.72%--__tcp_push_pending_frames
+                          |                     tcp_push
+                          |                     tcp_sendmsg_locked
+                          |                     tcp_sendmsg
+                          |                     inet_sendmsg
+                          |                     sock_sendmsg
+                          |                     ___sys_sendmsg
+                          |                     __sys_sendmsg
+                          |                     sys_sendmsg
+                          |                     do_syscall_64
+                          |                     entry_SYSCALL_64_after_hwframe
+                          |                     __libc_sendmsg
+                          |                     0
+                          |          
+                           --1.65%--__tcp_send_ack.part.39
+                                     tcp_send_ack
+                                     |          
+                                      --1.32%--tcp_delack_timer_handler
+                                                tcp_delack_timer
+                                                call_timer_fn
+                                                run_timer_softirq
+                                                __softirqentry_text_start
+                                                |          
+                                                 --1.20%--irq_exit
+                                                           smp_apic_timer_interrupt
+                                                           apic_timer_interrupt
+
+     6.21%     0.08%             5  memcached  [kernel.kallsyms]      [k] vfs_read
+            |
+            ---vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     5.46%     0.08%             5  memcached  [kernel.kallsyms]      [k] dev_queue_xmit
+            |
+            ---dev_queue_xmit
+               |          
+                --5.38%--ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                          |--3.98%--tcp_write_xmit
+                          |          |          
+                          |           --3.96%--__tcp_push_pending_frames
+                          |                     tcp_push
+                          |                     tcp_sendmsg_locked
+                          |                     tcp_sendmsg
+                          |                     inet_sendmsg
+                          |                     sock_sendmsg
+                          |                     ___sys_sendmsg
+                          |                     __sys_sendmsg
+                          |                     sys_sendmsg
+                          |                     do_syscall_64
+                          |                     entry_SYSCALL_64_after_hwframe
+                          |                     __libc_sendmsg
+                          |                     0
+                          |          
+                           --1.40%--__tcp_send_ack.part.39
+                                     tcp_send_ack
+                                     |          
+                                      --1.12%--tcp_delack_timer_handler
+                                                tcp_delack_timer
+                                                call_timer_fn
+                                                run_timer_softirq
+                                                __softirqentry_text_start
+                                                |          
+                                                 --1.02%--irq_exit
+                                                           smp_apic_timer_interrupt
+                                                           apic_timer_interrupt
+
+     5.40%     0.40%            24  memcached  [kernel.kallsyms]      [k] __dev_queue_xmit
+            |
+            ---__dev_queue_xmit
+               |          
+                --5.33%--dev_queue_xmit
+                          |          
+                           --5.31%--ip_finish_output2
+                                     ip_finish_output
+                                     ip_output
+                                     ip_local_out
+                                     ip_queue_xmit
+                                     __tcp_transmit_skb
+                                     |          
+                                     |--3.91%--tcp_write_xmit
+                                     |          |          
+                                     |           --3.90%--__tcp_push_pending_frames
+                                     |                     tcp_push
+                                     |                     tcp_sendmsg_locked
+                                     |                     tcp_sendmsg
+                                     |                     inet_sendmsg
+                                     |                     sock_sendmsg
+                                     |                     ___sys_sendmsg
+                                     |                     __sys_sendmsg
+                                     |                     sys_sendmsg
+                                     |                     do_syscall_64
+                                     |                     entry_SYSCALL_64_after_hwframe
+                                     |                     __libc_sendmsg
+                                     |                     0
+                                     |          
+                                      --1.40%--__tcp_send_ack.part.39
+                                                tcp_send_ack
+                                                |          
+                                                 --1.12%--tcp_delack_timer_handler
+                                                           tcp_delack_timer
+                                                           call_timer_fn
+                                                           run_timer_softirq
+                                                           __softirqentry_text_start
+                                                           |          
+                                                            --1.02%--irq_exit
+                                                                      smp_apic_timer_interrupt
+                                                                      apic_timer_interrupt
+
+     5.35%     0.02%             1  memcached  [kernel.kallsyms]      [k] __vfs_read
+            |
+            ---__vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     5.32%     0.20%            12  memcached  [kernel.kallsyms]      [k] new_sync_read
+            |
+            ---new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     5.32%     5.32%           318  memcached  [kernel.kallsyms]      [k] __entry_trampoline_start
+            |
+            ---__entry_trampoline_start
+               |          
+               |--4.65%--__libc_sendmsg
+               |          0
+               |          
+                --0.65%--__libc_read
+
+     5.12%     0.10%             6  memcached  [kernel.kallsyms]      [k] sock_read_iter
+            |
+            ---sock_read_iter
+               |          
+                --5.10%--new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     4.97%     0.05%             3  memcached  [kernel.kallsyms]      [k] sock_recvmsg
+            |
+            ---sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     4.75%     4.75%           284  memcached  [kernel.kallsyms]      [k] syscall_return_via_sysret
+            |
+            ---syscall_return_via_sysret
+               |          
+                --4.40%--__libc_sendmsg
+                          0
+
+     4.72%     0.00%             0  memcached  [kernel.kallsyms]      [k] __softirqentry_text_start
+            |
+            ---__softirqentry_text_start
+               |          
+                --4.41%--irq_exit
+                          |          
+                           --4.25%--smp_apic_timer_interrupt
+                                     apic_timer_interrupt
+                                     |          
+                                      --0.68%--__libc_sendmsg
+                                                0
+
+     4.58%     0.70%            42  memcached  [kernel.kallsyms]      [k] tcp_recvmsg
+            |
+            ---tcp_recvmsg
+               |          
+                --4.55%--inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     4.58%     0.02%             1  memcached  [kernel.kallsyms]      [k] inet_recvmsg
+            |
+            ---inet_recvmsg
+               sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     4.57%     0.07%             4  memcached  [kernel.kallsyms]      [k] run_timer_softirq
+            |
+            ---run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --4.25%--irq_exit
+                          smp_apic_timer_interrupt
+                          apic_timer_interrupt
+                          |          
+                           --0.68%--__libc_sendmsg
+                                     0
+
+     4.44%     0.10%             6  memcached  [kernel.kallsyms]      [k] sch_direct_xmit
+            |
+            ---sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               |          
+                --4.43%--ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                          |--3.26%--tcp_write_xmit
+                          |          |          
+                          |           --3.24%--__tcp_push_pending_frames
+                          |                     tcp_push
+                          |                     tcp_sendmsg_locked
+                          |                     tcp_sendmsg
+                          |                     inet_sendmsg
+                          |                     sock_sendmsg
+                          |                     ___sys_sendmsg
+                          |                     __sys_sendmsg
+                          |                     sys_sendmsg
+                          |                     do_syscall_64
+                          |                     entry_SYSCALL_64_after_hwframe
+                          |                     __libc_sendmsg
+                          |                     0
+                          |          
+                           --1.17%--__tcp_send_ack.part.39
+                                     tcp_send_ack
+                                     |          
+                                      --0.95%--tcp_delack_timer_handler
+                                                tcp_delack_timer
+                                                call_timer_fn
+                                                run_timer_softirq
+                                                __softirqentry_text_start
+                                                |          
+                                                 --0.87%--irq_exit
+                                                           smp_apic_timer_interrupt
+                                                           apic_timer_interrupt
+
+     4.41%     0.00%             0  memcached  [kernel.kallsyms]      [k] irq_exit
+            |
+            ---irq_exit
+               |          
+                --4.25%--smp_apic_timer_interrupt
+                          apic_timer_interrupt
+                          |          
+                           --0.68%--__libc_sendmsg
+                                     0
+
+     4.32%     0.00%             0  memcached  [kernel.kallsyms]      [k] apic_timer_interrupt
+            |
+            ---apic_timer_interrupt
+               |          
+                --0.70%--__libc_sendmsg
+                          0
+
+     4.32%     0.00%             0  memcached  [kernel.kallsyms]      [k] smp_apic_timer_interrupt
+            |
+            ---smp_apic_timer_interrupt
+               apic_timer_interrupt
+               |          
+                --0.70%--__libc_sendmsg
+                          0
+
+     4.29%     0.03%             2  memcached  [kernel.kallsyms]      [k] call_timer_fn
+            |
+            ---call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --3.97%--irq_exit
+                          smp_apic_timer_interrupt
+                          apic_timer_interrupt
+                          |          
+                           --0.67%--__libc_sendmsg
+                                     0
+
+     3.87%     0.03%             2  memcached  [kernel.kallsyms]      [k] tcp_send_ack
+            |
+            ---tcp_send_ack
+               |          
+                --3.38%--tcp_delack_timer_handler
+                          tcp_delack_timer
+                          call_timer_fn
+                          run_timer_softirq
+                          __softirqentry_text_start
+                          |          
+                           --3.15%--irq_exit
+                                     smp_apic_timer_interrupt
+                                     apic_timer_interrupt
+                                     |          
+                                      --0.55%--__libc_sendmsg
+                                                0
+
+     3.82%     0.13%             8  memcached  [kernel.kallsyms]      [k] __tcp_send_ack.part.39
+            |
+            ---__tcp_send_ack.part.39
+               tcp_send_ack
+               |          
+                --3.37%--tcp_delack_timer_handler
+                          tcp_delack_timer
+                          call_timer_fn
+                          run_timer_softirq
+                          __softirqentry_text_start
+                          |          
+                           --3.13%--irq_exit
+                                     smp_apic_timer_interrupt
+                                     apic_timer_interrupt
+                                     |          
+                                      --0.53%--__libc_sendmsg
+                                                0
+
+     3.80%     0.02%             1  memcached  [kernel.kallsyms]      [k] tcp_delack_timer
+            |
+            ---tcp_delack_timer
+               call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --3.57%--irq_exit
+                          smp_apic_timer_interrupt
+                          apic_timer_interrupt
+                          |          
+                           --0.58%--__libc_sendmsg
+                                     0
+
+     3.67%     0.12%             7  memcached  [kernel.kallsyms]      [k] tcp_delack_timer_handler
+            |
+            ---tcp_delack_timer_handler
+               tcp_delack_timer
+               call_timer_fn
+               run_timer_softirq
+               __softirqentry_text_start
+               |          
+                --3.43%--irq_exit
+                          smp_apic_timer_interrupt
+                          apic_timer_interrupt
+                          |          
+                           --0.57%--__libc_sendmsg
+                                     0
+
+     3.28%     0.13%             8  memcached  [kernel.kallsyms]      [k] sk_stream_alloc_skb
+            |
+            ---sk_stream_alloc_skb
+               |          
+                --3.26%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     3.26%     0.77%            46  memcached  [kernel.kallsyms]      [k] __alloc_skb
+            |
+            ---__alloc_skb
+               |          
+                --2.80%--sk_stream_alloc_skb
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     3.09%     0.57%            34  memcached  [kernel.kallsyms]      [k] tcp_send_mss
+            |
+            ---tcp_send_mss
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     2.76%     0.47%            28  memcached  [kernel.kallsyms]      [k] lock_sock_nested
+            |
+            ---lock_sock_nested
+               |          
+                --2.66%--tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     2.51%     0.27%            16  memcached  [kernel.kallsyms]      [k] dev_hard_start_xmit
+            |
+            ---dev_hard_start_xmit
+               |          
+                --2.49%--sch_direct_xmit
+                          __dev_queue_xmit
+                          dev_queue_xmit
+                          |          
+                           --2.47%--ip_finish_output2
+                                     ip_finish_output
+                                     ip_output
+                                     ip_local_out
+                                     ip_queue_xmit
+                                     __tcp_transmit_skb
+                                     |          
+                                      --2.01%--tcp_write_xmit
+                                                |          
+                                                 --1.99%--__tcp_push_pending_frames
+                                                           tcp_push
+                                                           tcp_sendmsg_locked
+                                                           tcp_sendmsg
+                                                           inet_sendmsg
+                                                           sock_sendmsg
+                                                           ___sys_sendmsg
+                                                           __sys_sendmsg
+                                                           sys_sendmsg
+                                                           do_syscall_64
+                                                           entry_SYSCALL_64_after_hwframe
+                                                           __libc_sendmsg
+                                                           0
+
+     2.46%     2.36%           141  memcached  memcached              [.] tokenize_command.constprop.28
+            |
+            ---tokenize_command.constprop.28
+
+     2.44%     1.37%            82  memcached  [kernel.kallsyms]      [k] __check_object_size
+            |
+            ---__check_object_size
+               |          
+                --1.54%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     2.38%     2.14%           128  memcached  memcached              [.] resp_start
+            |
+            ---resp_start
+
+     2.26%     0.55%            33  memcached  [kernel.kallsyms]      [k] tcp_current_mss
+            |
+            ---tcp_current_mss
+               |          
+                --2.22%--tcp_send_mss
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     2.11%     1.92%           115  memcached  libpthread-2.27.so     [.] __pthread_mutex_lock
+            |
+            ---__pthread_mutex_lock
+
+     2.02%     0.25%            15  memcached  [kernel.kallsyms]      [k] copy_msghdr_from_user
+            |
+            ---copy_msghdr_from_user
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     2.01%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e8f8
+            |
+            ---0x1e8f8
+
+     1.96%     0.43%            26  memcached  [kernel.kallsyms]      [k] sockfd_lookup_light
+            |
+            ---sockfd_lookup_light
+               |          
+                --1.94%--__sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.86%     0.25%            15  memcached  [kernel.kallsyms]      [k] __fget_light
+            |
+            ---__fget_light
+               |          
+                --1.37%--__fdget
+                          sockfd_lookup_light
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.76%     1.66%            99  memcached  [kernel.kallsyms]      [k] _raw_spin_lock
+            |
+            ---_raw_spin_lock
+               |          
+                --1.25%--sch_direct_xmit
+                          __dev_queue_xmit
+                          dev_queue_xmit
+                          ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                          |--0.75%--tcp_write_xmit
+                          |          __tcp_push_pending_frames
+                          |          tcp_push
+                          |          tcp_sendmsg_locked
+                          |          tcp_sendmsg
+                          |          inet_sendmsg
+                          |          sock_sendmsg
+                          |          ___sys_sendmsg
+                          |          __sys_sendmsg
+                          |          sys_sendmsg
+                          |          do_syscall_64
+                          |          entry_SYSCALL_64_after_hwframe
+                          |          __libc_sendmsg
+                          |          0
+                          |          
+                           --0.50%--__tcp_send_ack.part.39
+                                     tcp_send_ack
+
+     1.75%     0.70%            42  memcached  [kernel.kallsyms]      [k] _raw_spin_lock_bh
+            |
+            ---_raw_spin_lock_bh
+               |          
+                --1.19%--lock_sock_nested
+                          |          
+                           --1.12%--tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     1.74%     1.71%           102  memcached  memcached              [.] process_get_command.constprop.24
+            |
+            ---process_get_command.constprop.24
+               |          
+                --0.58%--0
+
+     1.64%     0.28%            17  memcached  [kernel.kallsyms]      [k] security_socket_sendmsg
+            |
+            ---security_socket_sendmsg
+               |          
+                --1.61%--sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.62%     0.25%            15  memcached  [kernel.kallsyms]      [k] __fdget
+            |
+            ---__fdget
+               |          
+                --1.41%--sockfd_lookup_light
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.59%     1.55%            93  memcached  [kernel.kallsyms]      [k] __fget
+            |
+            ---__fget
+               __fget_light
+               |          
+                --1.25%--__fdget
+                          sockfd_lookup_light
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.54%     1.54%            87  memcached  [kernel.kallsyms]      [k] native_queued_spin_lock_slowpath
+            |
+            ---native_queued_spin_lock_slowpath
+               |          
+                --1.05%--_raw_spin_lock_bh
+                          lock_sock_nested
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.47%     0.45%            27  memcached  [kernel.kallsyms]      [k] release_sock
+            |
+            ---release_sock
+               |          
+                --1.24%--tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.47%     1.19%            71  memcached  [kernel.kallsyms]      [k] tcp_established_options
+            |
+            ---tcp_established_options
+               |          
+               |--0.87%--tcp_current_mss
+               |          |          
+               |           --0.85%--tcp_send_mss
+               |                     tcp_sendmsg_locked
+               |                     tcp_sendmsg
+               |                     inet_sendmsg
+               |                     sock_sendmsg
+               |                     ___sys_sendmsg
+               |                     __sys_sendmsg
+               |                     sys_sendmsg
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __libc_sendmsg
+               |                     0
+               |          
+                --0.50%--__tcp_transmit_skb
+
+     1.39%     0.18%            11  memcached  [kernel.kallsyms]      [k] import_iovec
+            |
+            ---import_iovec
+               |          
+                --1.35%--copy_msghdr_from_user
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.37%     0.32%            19  memcached  [kernel.kallsyms]      [k] aa_sock_msg_perm
+            |
+            ---aa_sock_msg_perm
+               |          
+                --1.10%--apparmor_socket_sendmsg
+                          security_socket_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.37%     1.29%            77  memcached  memcached              [.] assoc_find
+            |
+            ---assoc_find
+
+     1.36%     1.35%            80  memcached  [kernel.kallsyms]      [k] __indirect_thunk_start
+            |
+            ---__indirect_thunk_start
+
+     1.34%     0.03%             2  memcached  [kernel.kallsyms]      [k] sk_reset_timer
+            |
+            ---sk_reset_timer
+               |          
+               |--0.84%--tcp_rearm_rto.part.60
+               |          tcp_rearm_rto
+               |          tcp_event_new_data_sent
+               |          tcp_write_xmit
+               |          __tcp_push_pending_frames
+               |          tcp_push
+               |          tcp_sendmsg_locked
+               |          tcp_sendmsg
+               |          inet_sendmsg
+               |          sock_sendmsg
+               |          ___sys_sendmsg
+               |          __sys_sendmsg
+               |          sys_sendmsg
+               |          do_syscall_64
+               |          entry_SYSCALL_64_after_hwframe
+               |          __libc_sendmsg
+               |          0
+               |          
+                --0.50%--tcp_schedule_loss_probe
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.32%     1.08%            65  memcached  libpthread-2.27.so     [.] __pthread_mutex_unlock
+            |
+            ---__pthread_mutex_unlock
+
+     1.31%     0.15%             9  memcached  [kernel.kallsyms]      [k] apparmor_socket_sendmsg
+            |
+            ---apparmor_socket_sendmsg
+               |          
+                --1.22%--security_socket_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.24%     0.15%             9  memcached  [kernel.kallsyms]      [k] skb_copy_datagram_iter
+            |
+            ---skb_copy_datagram_iter
+               tcp_recvmsg
+               inet_recvmsg
+               sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     1.24%     0.44%            26  memcached  [kernel.kallsyms]      [k] mod_timer
+            |
+            ---mod_timer
+               sk_reset_timer
+               |          
+                --0.79%--tcp_rearm_rto.part.60
+                          tcp_rearm_rto
+                          tcp_event_new_data_sent
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.22%     0.02%             1  memcached  [kernel.kallsyms]      [k] igb_xmit_frame
+            |
+            ---igb_xmit_frame
+               dev_hard_start_xmit
+               sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               |          
+                --1.20%--ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                           --0.99%--tcp_write_xmit
+                                     __tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     1.20%     0.03%             2  memcached  [kernel.kallsyms]      [k] __kfree_skb
+            |
+            ---__kfree_skb
+               tcp_recvmsg
+               inet_recvmsg
+               sock_recvmsg
+               sock_read_iter
+               new_sync_read
+               __vfs_read
+               vfs_read
+               sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_read
+
+     1.16%     1.14%            68  memcached  memcached              [.] MurmurHash3_x86_32
+            |
+            ---MurmurHash3_x86_32
+
+     1.15%     0.33%            20  memcached  [kernel.kallsyms]      [k] rw_copy_check_uvector
+            |
+            ---rw_copy_check_uvector
+               import_iovec
+               copy_msghdr_from_user
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     1.15%     0.44%            26  memcached  [kernel.kallsyms]      [k] _copy_from_iter_full
+            |
+            ---_copy_from_iter_full
+               |          
+                --1.12%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.14%     1.09%            65  memcached  memcached              [.] drive_machine
+            |
+            ---drive_machine
+               0x1e8f8
+
+     1.09%     0.74%            44  memcached  [kernel.kallsyms]      [k] __local_bh_enable_ip
+            |
+            ---__local_bh_enable_ip
+
+     1.09%     1.04%            62  memcached  [kernel.kallsyms]      [k] igb_xmit_frame_ring
+            |
+            ---igb_xmit_frame_ring
+               igb_xmit_frame
+               dev_hard_start_xmit
+               sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               |          
+                --1.07%--ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          |          
+                           --0.90%--tcp_write_xmit
+                                     __tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     1.07%     0.99%            59  memcached  [kernel.kallsyms]      [k] aa_sk_perm
+            |
+            ---aa_sk_perm
+               |          
+                --1.04%--aa_sock_msg_perm
+                          apparmor_socket_sendmsg
+                          security_socket_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     1.05%     0.00%             0  memcached  [unknown]              [.] 0x0000000100000000
+            |
+            ---0x100000000
+
+     1.04%     0.90%            54  memcached  memcached              [.] process_command
+            |
+            ---process_command
+
+     1.04%     0.07%             4  memcached  [kernel.kallsyms]      [k] tcp_event_new_data_sent
+            |
+            ---tcp_event_new_data_sent
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     1.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] ixgbe_xmit_frame
+            |
+            ---ixgbe_xmit_frame
+               dev_hard_start_xmit
+               sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               ip_finish_output2
+               ip_finish_output
+               ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --0.80%--tcp_write_xmit
+                          |          
+                           --0.79%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.98%     0.00%             1  memcached  libc-2.27.so           [.] epoll_wait
+            |
+            ---epoll_wait
+               |          
+                --0.98%--0x100000000
+
+     0.97%     0.00%             0  memcached  [kernel.kallsyms]      [k] sys_epoll_wait
+            |
+            ---sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               |          
+                --0.97%--0x100000000
+
+     0.97%     0.00%             0  memcached  [kernel.kallsyms]      [k] ep_poll
+            |
+            ---ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               |          
+                --0.97%--0x100000000
+
+     0.97%     0.00%             0  memcached  [kernel.kallsyms]      [k] ep_scan_ready_list.constprop.17
+            |
+            ---ep_scan_ready_list.constprop.17
+               ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               0x100000000
+
+     0.95%     0.13%             8  memcached  [kernel.kallsyms]      [k] __kmalloc_reserve.isra.43
+            |
+            ---__kmalloc_reserve.isra.43
+               __alloc_skb
+               |          
+                --0.80%--sk_stream_alloc_skb
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.95%     0.08%             5  memcached  [kernel.kallsyms]      [k] ep_send_events_proc
+            |
+            ---ep_send_events_proc
+               ep_scan_ready_list.constprop.17
+               ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               0x100000000
+
+     0.92%     0.07%             4  memcached  [kernel.kallsyms]      [k] skb_clone
+            |
+            ---skb_clone
+               |          
+                --0.90%--__tcp_transmit_skb
+                          tcp_write_xmit
+                          |          
+                           --0.89%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.90%     0.02%             1  memcached  [kernel.kallsyms]      [k] tcp_rearm_rto
+            |
+            ---tcp_rearm_rto
+               |          
+                --0.89%--tcp_event_new_data_sent
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.90%     0.84%            50  memcached  [kernel.kallsyms]      [k] ixgbe_xmit_frame_ring
+            |
+            ---ixgbe_xmit_frame_ring
+               ixgbe_xmit_frame
+               dev_hard_start_xmit
+               sch_direct_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               ip_finish_output2
+               ip_finish_output
+               ip_output
+               ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               |          
+                --0.72%--tcp_write_xmit
+                          |          
+                           --0.70%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.89%     0.05%             3  memcached  [kernel.kallsyms]      [k] skb_release_all
+            |
+            ---skb_release_all
+               |          
+                --0.84%--__kfree_skb
+                          tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     0.89%     0.03%             2  memcached  [kernel.kallsyms]      [k] tcp_rearm_rto.part.60
+            |
+            ---tcp_rearm_rto.part.60
+               tcp_rearm_rto
+               tcp_event_new_data_sent
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.87%     0.69%            41  memcached  [kernel.kallsyms]      [k] __skb_clone
+            |
+            ---__skb_clone
+               |          
+                --0.82%--skb_clone
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          |          
+                           --0.80%--__tcp_push_pending_frames
+                                     tcp_push
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.87%     0.33%            20  memcached  [kernel.kallsyms]      [k] kmem_cache_alloc_node
+            |
+            ---kmem_cache_alloc_node
+               __alloc_skb
+               |          
+                --0.74%--sk_stream_alloc_skb
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.87%     0.17%            10  memcached  [kernel.kallsyms]      [k] ep_item_poll.isra.12
+            |
+            ---ep_item_poll.isra.12
+               |          
+                --0.85%--ep_send_events_proc
+                          ep_scan_ready_list.constprop.17
+                          ep_poll
+                          sys_epoll_wait
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          epoll_wait
+                          0x100000000
+
+     0.80%     0.08%             5  memcached  [kernel.kallsyms]      [k] _copy_to_iter
+            |
+            ---_copy_to_iter
+               |          
+                --0.77%--skb_copy_datagram_iter
+                          tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     0.77%     0.75%            45  memcached  [kernel.kallsyms]      [k] copy_user_enhanced_fast_string
+            |
+            ---copy_user_enhanced_fast_string
+               |          
+                --0.72%--_copy_to_iter
+                          skb_copy_datagram_iter
+                          tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     0.74%     0.25%            15  memcached  [kernel.kallsyms]      [k] rw_verify_area
+            |
+            ---rw_verify_area
+               |          
+                --0.72%--vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     0.72%     0.72%            14  memcached  [kernel.kallsyms]      [k] rcu_all_qs
+            |
+            ---rcu_all_qs
+               |          
+                --0.63%--lock_sock_nested
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.70%     0.40%            24  memcached  [kernel.kallsyms]      [k] __kmalloc_node_track_caller
+            |
+            ---__kmalloc_node_track_caller
+               __kmalloc_reserve.isra.43
+               __alloc_skb
+               |          
+                --0.60%--sk_stream_alloc_skb
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.69%     0.30%            18  memcached  [kernel.kallsyms]      [k] __ip_local_out
+            |
+            ---__ip_local_out
+               |          
+                --0.67%--ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+
+     0.65%     0.64%            38  memcached  memcached              [.] item_get
+            |
+            ---item_get
+
+     0.65%     0.65%            39  memcached  [kernel.kallsyms]      [k] copy_user_generic_unrolled
+            |
+            ---copy_user_generic_unrolled
+
+     0.65%     0.07%             4  memcached  [kernel.kallsyms]      [k] lock_timer_base
+            |
+            ---lock_timer_base
+               |          
+                --0.62%--mod_timer
+                          sk_reset_timer
+
+     0.64%     0.28%            17  memcached  [kernel.kallsyms]      [k] sock_poll
+            |
+            ---sock_poll
+               ep_item_poll.isra.12
+               ep_send_events_proc
+               ep_scan_ready_list.constprop.17
+               ep_poll
+               sys_epoll_wait
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               epoll_wait
+               0x100000000
+
+     0.64%     0.64%            38  memcached  [kernel.kallsyms]      [k] entry_SYSCALL_64_stage2
+            |
+            ---entry_SYSCALL_64_stage2
+               |          
+                --0.57%--__libc_sendmsg
+                          0
+
+     0.63%     0.60%            36  memcached  libpthread-2.27.so     [.] __pthread_disable_asynccancel
+            |
+            ---__pthread_disable_asynccancel
+               |          
+                --0.58%--0
+
+     0.62%     0.60%            36  memcached  memcached              [.] do_item_get
+            |
+            ---do_item_get
+
+     0.62%     0.57%            34  memcached  [kernel.kallsyms]      [k] __virt_addr_valid
+            |
+            ---__virt_addr_valid
+               |          
+                --0.60%--__check_object_size
+                          |          
+                           --0.55%--tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.60%     0.13%             8  memcached  [kernel.kallsyms]      [k] tcp_cleanup_rbuf
+            |
+            ---tcp_cleanup_rbuf
+               |          
+                --0.59%--tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          sock_read_iter
+                          new_sync_read
+                          __vfs_read
+                          vfs_read
+                          sys_read
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_read
+
+     0.60%     0.28%            17  memcached  [kernel.kallsyms]      [k] _raw_spin_lock_irqsave
+            |
+            ---_raw_spin_lock_irqsave
+               |          
+                --0.58%--lock_timer_base
+                          mod_timer
+                          sk_reset_timer
+
+     0.60%     0.57%            34  memcached  [kernel.kallsyms]      [k] ipv4_mtu
+            |
+            ---ipv4_mtu
+
+     0.59%     0.57%            35  memcached  [kernel.kallsyms]      [k] ksize
+            |
+            ---ksize
+               |          
+                --0.57%--__alloc_skb
+                          |          
+                           --0.52%--sk_stream_alloc_skb
+                                     tcp_sendmsg_locked
+                                     tcp_sendmsg
+                                     inet_sendmsg
+                                     sock_sendmsg
+                                     ___sys_sendmsg
+                                     __sys_sendmsg
+                                     sys_sendmsg
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __libc_sendmsg
+                                     0
+
+     0.59%     0.07%             4  memcached  [kernel.kallsyms]      [k] tcp_schedule_loss_probe
+            |
+            ---tcp_schedule_loss_probe
+               |          
+                --0.57%--tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.57%     0.55%            33  memcached  memcached              [.] conn_set_state.isra.1
+            |
+            ---conn_set_state.isra.1
+
+     0.57%     0.15%             9  memcached  [kernel.kallsyms]      [k] sk_page_frag_refill
+            |
+            ---sk_page_frag_refill
+               |          
+                --0.54%--tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          ___sys_sendmsg
+                          __sys_sendmsg
+                          sys_sendmsg
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_sendmsg
+                          0
+
+     0.57%     0.52%            31  memcached  [kernel.kallsyms]      [k] check_stack_object
+            |
+            ---check_stack_object
+
+     0.53%     0.05%             3  memcached  [kernel.kallsyms]      [k] __slab_alloc
+            |
+            ---__slab_alloc
+
+     0.52%     0.52%            31  memcached  memcached              [.] transmit
+            |
+            ---transmit
+
+     0.52%     0.10%             6  memcached  [kernel.kallsyms]      [k] validate_xmit_skb_list
+            |
+            ---validate_xmit_skb_list
+               |          
+                --0.50%--sch_direct_xmit
+                          __dev_queue_xmit
+                          dev_queue_xmit
+                          ip_finish_output2
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+
+     0.50%     0.05%             3  memcached  [kernel.kallsyms]      [k] skb_release_data
+            |
+            ---skb_release_data
+
+     0.48%     0.17%            10  memcached  [kernel.kallsyms]      [k] security_file_permission
+     0.47%     0.12%             7  memcached  [kernel.kallsyms]      [k] tcp_write_timer
+     0.47%     0.23%            14  memcached  [kernel.kallsyms]      [k] ___slab_alloc
+     0.47%     0.18%            11  memcached  [kernel.kallsyms]      [k] _raw_spin_unlock_bh
+     0.45%     0.02%             1  memcached  [kernel.kallsyms]      [k] skb_free_head
+     0.45%     0.15%             9  memcached  [kernel.kallsyms]      [k] validate_xmit_skb
+     0.43%     0.03%             2  memcached  [kernel.kallsyms]      [k] page_frag_free
+     0.42%     0.39%            23  memcached  [kernel.kallsyms]      [k] skb_page_frag_refill
+     0.42%     0.40%            24  memcached  memcached              [.] try_read_command_ascii
+     0.42%     0.40%            24  memcached  [kernel.kallsyms]      [k] ip_send_check
+     0.42%     0.35%            21  memcached  [kernel.kallsyms]      [k] _cond_resched
+     0.42%     0.30%            18  memcached  [kernel.kallsyms]      [k] skb_entail
+     0.40%     0.38%            23  memcached  [kernel.kallsyms]      [k] tcp_v4_md5_lookup
+     0.38%     0.37%            22  memcached  [kernel.kallsyms]      [k] tcp_rate_check_app_limited
+     0.37%     0.37%            22  memcached  libc-2.27.so           [.] __strlen_avx2
+     0.37%     0.28%            17  memcached  [kernel.kallsyms]      [k] tcp_release_cb
+     0.37%     0.03%             2  memcached  [kernel.kallsyms]      [k] free_unref_page
+     0.35%     0.00%             0  memcached  [kernel.kallsyms]      [k] __fdget_pos
+     0.35%     0.03%             2  memcached  [kernel.kallsyms]      [k] sched_clock_cpu
+     0.33%     0.30%            18  memcached  [kernel.kallsyms]      [k] iov_iter_advance
+     0.32%     0.32%            19  memcached  memcached              [.] resp_finish
+     0.32%     0.10%             6  memcached  [kernel.kallsyms]      [k] skb_release_head_state
+     0.32%     0.03%             2  memcached  [kernel.kallsyms]      [k] __sk_mem_schedule
+     0.32%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_softirq.part.17
+     0.32%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_softirq_own_stack
+     0.30%     0.08%             5  memcached  [kernel.kallsyms]      [k] sched_clock
+     0.30%     0.05%             3  memcached  [kernel.kallsyms]      [k] netdev_pick_tx
+     0.28%     0.27%            16  memcached  [kernel.kallsyms]      [k] tcp_poll
+     0.28%     0.02%             1  memcached  [kernel.kallsyms]      [k] kfree_skbmem
+     0.28%     0.25%            15  memcached  [kernel.kallsyms]      [k] __sk_mem_raise_allocated
+     0.25%     0.25%            15  memcached  [kernel.kallsyms]      [k] sock_rfree
+     0.25%     0.25%            15  memcached  [kernel.kallsyms]      [k] ipv4_dst_check
+     0.25%     0.12%             7  memcached  [kernel.kallsyms]      [k] kmem_cache_free
+     0.25%     0.07%             4  memcached  [kernel.kallsyms]      [k] security_socket_recvmsg
+     0.25%     0.25%            15  memcached  [kernel.kallsyms]      [k] native_sched_clock
+     0.25%     0.03%             2  memcached  [kernel.kallsyms]      [k] free_unref_page_commit
+     0.24%     0.22%            13  memcached  libc-2.27.so           [.] __GI_____strtoull_l_internal
+     0.23%     0.23%            14  memcached  memcached              [.] _transmit_post
+     0.23%     0.08%             5  memcached  [kernel.kallsyms]      [k] tcp_rcv_space_adjust
+     0.23%     0.22%            13  memcached  memcached              [.] do_cache_alloc
+     0.23%     0.23%            14  memcached  [kernel.kallsyms]      [k] _copy_from_user
+     0.23%     0.18%            11  memcached  [kernel.kallsyms]      [k] netif_skb_features
+     0.23%     0.23%            14  memcached  memcached              [.] process_update_command
+     0.23%     0.23%            14  memcached  [kernel.kallsyms]      [k] __netdev_pick_tx
+     0.22%     0.00%             0  memcached  [unknown]              [.] 0x7878787878787878
+     0.22%     0.22%            13  memcached  memcached              [.] do_cache_free
+     0.22%     0.17%            10  memcached  libc-2.27.so           [.] __memchr_avx2
+     0.22%     0.20%            12  memcached  [kernel.kallsyms]      [k] fsnotify
+     0.22%     0.22%            13  memcached  [kernel.kallsyms]      [k] free_pcppages_bulk
+     0.21%     0.00%             0  memcached  [unknown]              [.] 0x74697728206c6c6f
+     0.21%     0.00%             0  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000028b20
+     0.20%     0.20%            12  memcached  memcached              [.] _transmit_pre
+     0.20%     0.18%            11  memcached  [kernel.kallsyms]      [k] tcp_tx_timestamp
+     0.20%     0.05%             3  memcached  [kernel.kallsyms]      [k] ixgbe_select_queue
+     0.18%     0.08%             5  memcached  [kernel.kallsyms]      [k] tcp_write_timer_handler
+     0.18%     0.18%            11  memcached  memcached              [.] pthread_mutex_lock@plt
+     0.18%     0.02%             1  memcached  [kernel.kallsyms]      [k] apparmor_socket_recvmsg
+     0.17%     0.13%             8  memcached  [kernel.kallsyms]      [k] fput
+     0.17%     0.17%            10  memcached  libc-2.27.so           [.] __memcmp_avx2_movbe
+     0.17%     0.00%             0  memcached  [unknown]              [.] 0x0000000500000000
+     0.17%     0.17%            10  memcached  [kernel.kallsyms]      [k] __cgroup_bpf_run_filter_skb
+     0.17%     0.10%             6  memcached  [kernel.kallsyms]      [k] _raw_spin_lock_irq
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] ret_from_intr
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_IRQ
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] net_rx_action
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] igb_poll
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] igb_clean_rx_irq
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] napi_gro_receive
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] dev_gro_receive
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] inet_gro_receive
+     0.15%     0.15%             1  memcached  [kernel.kallsyms]      [k] tcp4_gro_receive
+     0.15%     0.00%             0  memcached  [kernel.kallsyms]      [k] apparmor_file_permission
+     0.15%     0.07%             4  memcached  [kernel.kallsyms]      [k] common_file_perm
+     0.15%     0.13%             8  memcached  libevent-2.1.so.6.0.2  [.] event_callback_activate_nolock_
+     0.15%     0.15%             9  memcached  [kernel.kallsyms]      [k] kfree
+     0.15%     0.10%             6  memcached  [kernel.kallsyms]      [k] __slab_free
+     0.15%     0.15%             9  memcached  memcached              [.] pthread_mutex_unlock@plt
+     0.15%     0.12%             7  memcached  libevent-2.1.so.6.0.2  [.] evmap_io_active_
+     0.15%     0.13%             8  memcached  [kernel.kallsyms]      [k] tcp_md5_do_lookup
+     0.15%     0.13%             8  memcached  [kernel.kallsyms]      [k] prefetch_freepointer
+     0.13%     0.12%             7  memcached  [kernel.kallsyms]      [k] tcp_recv_timestamp
+     0.13%     0.13%             8  memcached  libevent-2.1.so.6.0.2  [.] event_active_nolock_
+     0.13%     0.13%             8  memcached  [kernel.kallsyms]      [k] tcp_stream_memory_free
+     0.13%     0.00%             0  memcached  [unknown]              [.] 0x0000564ac2fab710
+     0.12%     0.10%             6  memcached  [kernel.kallsyms]      [k] __sk_dst_check
+     0.12%     0.00%             0  memcached  [unknown]              [.] 0x0000564ac2fab560
+     0.12%     0.10%             6  memcached  [kernel.kallsyms]      [k] skb_push
+     0.12%     0.12%             7  memcached  [kernel.kallsyms]      [k] __cmpxchg_double_slab.isra.32
+     0.12%     0.12%             7  memcached  memcached              [.] do_item_unlink_q
+     0.12%     0.12%             7  memcached  [kernel.kallsyms]      [k] __tcp_select_window
+     0.11%     0.00%             0  memcached  libpthread-2.27.so     [.] __lll_unlock_wake
+     0.11%     0.00%             0  memcached  [kernel.kallsyms]      [k] sys_futex
+     0.11%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_futex
+     0.11%     0.00%             0  memcached  [kernel.kallsyms]      [k] futex_wake
+     0.11%     0.00%             0  memcached  [kernel.kallsyms]      [k] wake_up_q
+     0.11%     0.00%             0  memcached  [kernel.kallsyms]      [k] try_to_wake_up
+     0.11%     0.00%             0  memcached  [kernel.kallsyms]      [k] __task_rq_lock
+     0.10%     0.02%             1  memcached  [kernel.kallsyms]      [k] tcp_v4_send_check
+     0.10%     0.08%             5  memcached  [kernel.kallsyms]      [k] tcp_rbtree_insert
+     0.10%     0.08%             5  memcached  [kernel.kallsyms]      [k] __copy_skb_header
+     0.10%     0.10%             6  memcached  [kernel.kallsyms]      [k] swiotlb_map_page
+     0.10%     0.10%             6  memcached  memcached              [.] do_store_item
+     0.10%     0.08%             5  memcached  [kernel.kallsyms]      [k] new_slab
+     0.10%     0.10%             6  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e5bd
+     0.10%     0.10%             6  memcached  memcached              [.] conn_release_items
+     0.10%     0.08%             5  memcached  [kernel.kallsyms]      [k] copyin
+     0.09%     0.00%             0  memcached  [unknown]              [.] 0x0000564ac2f9f580
+     0.09%     0.09%             1  memcached  libevent-2.1.so.6.0.2  [.] event_del_nolock_
+     0.08%     0.08%             5  memcached  [kernel.kallsyms]      [k] __tcp_v4_send_check
+     0.08%     0.08%             5  memcached  [kernel.kallsyms]      [k] free_pcp_prepare
+     0.08%     0.07%             4  memcached  libc-2.27.so           [.] __GI_____strtoll_l_internal
+     0.08%     0.00%             0  memcached  [kernel.kallsyms]      [k] tcp_tsq_handler.part.42
+     0.08%     0.05%             3  memcached  [kernel.kallsyms]      [k] aa_file_perm
+     0.08%     0.08%             5  memcached  [kernel.kallsyms]      [k] __sk_mem_reduce_allocated
+     0.08%     0.08%             5  memcached  libpthread-2.27.so     [.] __pthread_enable_asynccancel
+     0.08%     0.08%             5  memcached  [kernel.kallsyms]      [k] ip_copy_addrs
+     0.08%     0.08%             5  memcached  memcached              [.] safe_strtoul
+     0.08%     0.08%             5  memcached  memcached              [.] assoc_delete
+     0.08%     0.08%             5  memcached  [kernel.kallsyms]      [k] tcp_tso_segs
+     0.07%     0.07%             4  memcached  memcached              [.] safe_strtol
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] hrtimer_interrupt
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] __hrtimer_run_queues
+     0.07%     0.07%             4  memcached  [kernel.kallsyms]      [k] memcg_kmem_put_cache
+     0.07%     0.07%             4  memcached  memcached              [.] do_item_alloc_pull
+     0.07%     0.07%             4  memcached  [kernel.kallsyms]      [k] __check_heap_object
+     0.07%     0.00%             0  memcached  [unknown]              [.] 0x313635352d726569
+     0.07%     0.05%             3  memcached  [kernel.kallsyms]      [k] tcp_chrono_start
+     0.07%     0.07%             4  memcached  memcached              [.] memchr@plt
+     0.07%     0.07%             4  memcached  memcached              [.] do_item_alloc
+     0.07%     0.00%             0  memcached  [kernel.kallsyms]      [k] __sk_mem_reclaim
+     0.07%     0.07%             4  memcached  libc-2.27.so           [.] __memmove_avx_unaligned_erms
+     0.07%     0.07%             4  memcached  [kernel.kallsyms]      [k] kmalloc_slab
+     0.05%     0.00%             0  memcached  [kernel.kallsyms]      [k] tick_sched_timer
+     0.05%     0.00%             0  memcached  [kernel.kallsyms]      [k] tick_sched_do_timer
+     0.05%     0.00%             0  memcached  [kernel.kallsyms]      [k] tick_do_update_jiffies64.part.11
+     0.05%     0.00%             0  memcached  [kernel.kallsyms]      [k] update_wall_time
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x5d7a410000000000
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x393738312d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x393331372d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x353730342d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x343232322d726569
+     0.05%     0.05%             3  memcached  memcached              [.] strlen@plt
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] cmpxchg_double_slab.isra.33
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x393130342d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x343536322d726569
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] detach_if_pending
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] skb_clone_tx_timestamp
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x373438312d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x363039332d726569
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] skb_network_protocol
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x313734392d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x363338332d726569
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x323938362d726569
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] tcp_options_write
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x383432382d726569
+     0.05%     0.00%             0  memcached  [kernel.kallsyms]      [k] _raw_spin_unlock_irqrestore
+     0.05%     0.05%             3  memcached  memcached              [.] item_free
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x393431372d726569
+     0.05%     0.05%             3  memcached  memcached              [.] do_item_link_q
+     0.05%     0.00%             0  memcached  [unknown]              [.] 0x383335312d726569
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] ixgbe_tx_ctxtdesc
+     0.05%     0.05%             3  memcached  [kernel.kallsyms]      [k] calc_wheel_index
+     0.03%     0.02%             1  memcached  [kernel.kallsyms]      [k] timekeeping_update
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x313137372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333639372d726569
+     0.03%     0.03%             2  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e6cc
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383535352d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363533372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x303134372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x353037382d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393539322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383730342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333638332d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333137382d726569
+     0.03%     0.00%             0  memcached  [kernel.kallsyms]      [k] tcp_send_loss_probe
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383030322d726569
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] __x86_indirect_thunk_r14
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333635392d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333535362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x303133342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333831362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x323438362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x313336362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x373033362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363837322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x313038342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x323137332d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363831342d726569
+     0.03%     0.03%             2  memcached  memcached              [.] get_cas_id
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333431362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383934342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383332322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393230362d726569
+     0.03%     0.03%             2  memcached  memcached              [.] sendmsg@plt
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363531322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393634332d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x323039392d726569
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] get_nohz_timer_target
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383138362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x373439342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393631352d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x303732322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383939312d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383239352d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x353932332d726569
+     0.03%     0.03%             2  memcached  memcached              [.] slabs_clsid
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x303230362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x373136382d726569
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] tcp_rate_skb_sent
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x323338392d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x353633372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x303338312d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363437342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x373035372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x353632392d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x303934382d726569
+     0.03%     0.00%             0  memcached  [kernel.kallsyms]      [k] page_fault
+     0.03%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_page_fault
+     0.03%     0.02%             1  memcached  [kernel.kallsyms]      [k] __do_page_fault
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x353033352d726569
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] swiotlb_dma_mapping_error
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393738322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363334372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333134342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x313039312d726569
+     0.03%     0.03%             2  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e5b0
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393136312d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363036342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363038342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x0000000800000000
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393232372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x343434332d726569
+     0.03%     0.03%             2  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e7d9
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383137372d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x343838312d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x313732332d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x393736362d726569
+     0.03%     0.03%             2  memcached  memcached              [.] rbuf_release
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x303432322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x353636392d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363635362d726569
+     0.03%     0.03%             2  memcached  memcached              [.] do_item_unlink
+     0.03%     0.02%             1  memcached  [kernel.kallsyms]      [k] rb_first
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333731382d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x313832362d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x333835392d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363731342d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x343135382d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x313731322d726569
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] free_unref_page_prepare.part.65
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] skb_put
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x383936392d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x373432312d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x323938372d726569
+     0.03%     0.03%             2  memcached  [kernel.kallsyms]      [k] __internal_add_timer
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x363232322d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x343537312d726569
+     0.03%     0.00%             0  memcached  [unknown]              [.] 0x323330322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333330352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353032392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353435372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303830342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313835352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383634382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373131342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333236342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323631392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393532312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363731322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333534342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343835392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303433332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343032352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353637332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363833342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323336342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353034342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323131362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034353630383436
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] rb_insert_color
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313330362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393636372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333739332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3810a100000001e0
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343035352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323737382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383439342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333232312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343538352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393833382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393138342d726569
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] __tcp_retransmit_skb
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313733342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353331382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313534392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323636342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303230352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333236362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343634382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313438352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323834372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363233322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303439312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313332362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343239342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363736382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393338362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036393832323035
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333034322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303230312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373937372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000011
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e6b4
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383836352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7836333038343437
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363332342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383733342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373838312d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] validate_xmit_xfrm
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333939352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333935392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363034362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323438352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393730332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333236392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000006e9
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000004f5
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333037332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037373438323831
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393938322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323630382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373139362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353935362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333039312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303430392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363433352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373536392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035343133313233
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323234382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383137312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373136362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373932372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323837392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313530372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032333238363034
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] swapgs_restore_regs_and_return_to_usermode
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] prepare_exit_to_usermode
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373934372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323830352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313934332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383834352d726569
+     0.02%     0.02%             1  memcached  memcached              [.] item_link_q
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373039312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x38076860000001e6
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373336392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343732382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353138382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323339382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343938322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383438372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032383732383738
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333130362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333939332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333331332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373839332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363737362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353733362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383039342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333437312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323330392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353131352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313739362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313337352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363833372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363737322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333531312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383037332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383132352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313436352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393739332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393635352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333937352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323930352d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000019663
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323135372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3807c620000001e4
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383036312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313838352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393733342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363830342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393530392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323734392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383538352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393238372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383933332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303133312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373032382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323037352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383930322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363433312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333035332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373736352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363938362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373736342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303438382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333235392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363935332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303435312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373434342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343534352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0033323632343235
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393637372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373934392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303932392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333230332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383635382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343035332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333634352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363839332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333234352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323339372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353535372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333830312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303934362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363435372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333032322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343832372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393535332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323034362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333035392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373333312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313838342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303331342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036383634393439
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313135322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0039373031363031
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343930332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383039392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383936352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393630372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000005c0
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363534332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313732352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000001fa
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035353130393336
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333933362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353936352d726569
+     0.02%     0.02%             1  memcached  memcached              [.] item_unlink_q
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393131322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383338352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000000ac
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031343032363735
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037313233303231
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373839372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393934372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313938372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000045c
+     0.02%     0.02%             1  memcached  libc-2.27.so           [.] __GI_strtoul
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000002936e
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323939382d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e8d7
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031303132303937
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393834342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373637352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303539392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373437342d726569
+     0.02%     0.02%             1  memcached  libpthread-2.27.so     [.] __errno_location
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343033382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031363831313138
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353531322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393234382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034363634313338
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313033342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393734382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030373330393234
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313835322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000053d
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303038322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363531342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393736392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333931382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313430382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383437332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333534392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037353537313431
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343134352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0a00393431333732
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333436352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383433352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035393033383235
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7838383431373131
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383631372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363833382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373330332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343030392d726569
+     0.02%     0.02%             1  memcached  libc-2.27.so           [.] __libc_calloc
+     0.02%     0.02%             1  memcached  memcached              [.] slabs_free
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313231312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313932392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393535372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313334332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323838352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373533332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353837332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7839373133303934
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313031322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333534382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363638332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323733312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353835382d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e7d0
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323138392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393838332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343937392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323039342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323638352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353332332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323531372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363633312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363837312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383036342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343232372d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] fq_codel_enqueue
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333334342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313635372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303335342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343632382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373133372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353935322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333136332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333331342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0a00313433313934
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333730322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363736392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313135362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313131362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030343130353537
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353532382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000523
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393034372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383137332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393333322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343936322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032303034313132
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303138352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363430332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038383134393637
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363938342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333334332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373939392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383531332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373436332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373832362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313331322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363130342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343139362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393937352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353039342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313331352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353931372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313830372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393732332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313632362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0033303332363734
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] ixgbe_features_check
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343731382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363335352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343830322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000931
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032323238363038
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353639332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323730392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373939322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373832382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000074c
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393339332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363939372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393135362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343236322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303730312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383434322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383730322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x380818a0000001d2
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343630322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353935352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393838342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363639332d726569
+     0.02%     0.02%             1  memcached  memcached              [.] slabs_alloc
+     0.02%     0.02%             1  memcached  memcached              [.] item_stats_sizes_add
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303331352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035343133333436
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323738392d726569
+     0.02%     0.02%             1  memcached  memcached              [.] do_slabs_alloc.isra.5
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343731362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0039303133373434
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393034342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353930382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363834362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373334312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363335362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313331372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032373538383133
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037373935323538
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343131372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363330322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313639352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393332322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353133372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323736392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333935382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393633342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383233362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393731382d726569
+     0.02%     0.02%             1  memcached  memcached              [.] item_is_flushed
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343937332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393538322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343634352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303531352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393635362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363238352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363930312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032353538313936
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0a00363430373534
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353133312d726569
+     0.02%     0.02%             1  memcached  memcached              [.] update_event
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363631382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373739372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000045f
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373731312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303237342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303538352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303436352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323836322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323135382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303233392d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000029379
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383836362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313537362d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] skb_csum_hwoffload_help
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353736392d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] sk_forced_mem_schedule
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393331342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333534362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313831342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323032342d726569
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] alloc_pages_current
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] __alloc_pages_nodemask
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] get_page_from_freelist
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333833352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313430392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037353233373131
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __x86_indirect_thunk_rcx
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303233312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353737342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353932362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373339342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353538392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313634352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323439332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373430332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032343032373835
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393533352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343439372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303131342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373138382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393736372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383833322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313831392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393731362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353039352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313538382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343738362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7835363734313133
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383536332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393235322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353739372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363333382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353132382d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] rb_last
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373034392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00007fdd380283e0
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383334312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373132332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323034322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393935382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353331362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7839383134363238
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303437382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323039322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353931312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343032382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333234382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313432352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313934392d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x0000000000019636
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038363436333034
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303039342d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __usecs_to_jiffies
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383534362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313538392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383435352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313237392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343230332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363135332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333737372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363932372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363234372d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e656
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373632382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383633312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0039353236393639
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303939362d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __fsnotify_parent
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313235382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353133342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363737352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393231392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343136322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343130362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333337342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383537342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393639362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363733372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303338392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363634322d726569
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] handle_mm_fault
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] __handle_mm_fault
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393731352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038353430313932
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353631372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0039383233323435
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363430382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031313137353139
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000373
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393630392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303935382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7830303439303138
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7839353735373235
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323538372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036313836343431
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353230312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363932312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303030332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323930382d726569
+     0.02%     0.02%             1  memcached  memcached              [.] memcpy@plt
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373338392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000007a8
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373537392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343737352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343836382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343738372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393237312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343732352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343134362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393034322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363033382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333737332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343435392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313535342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393435372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343131392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333834362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383337332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343330322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383532362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373637332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037303038353634
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323437322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393633332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363431352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313630352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393931372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323735342d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e77b
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035363633353235
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333535352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363330372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333233312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373035382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323139322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343838322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035313737393336
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383434332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000a9b
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343732332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323538312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373935322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343238322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323135392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383038372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353632342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383138392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313431322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313331312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3806f420000001f4
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323837342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303336322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000600
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353231352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x380ed00000000203
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343031372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393131382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034393835393136
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303731342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383732342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7838333838393439
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353032352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383137352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333739312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323639372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323130352d726569
+     0.02%     0.02%             1  memcached  memcached              [.] assoc_insert
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000000aa
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] ntp_get_next_leap
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7831323931383737
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313731382d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] iov_iter_init
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323031312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x38053040000001ef
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353831372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343430312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000a8c
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333033332d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] native_irq_return_iret
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303037332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323138332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383832382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393931332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393135382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030393031303735
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323130322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373035312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343937342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393333312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323531362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0033393337313536
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333932362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x38027300000001dd
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383633322d726569
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] neigh_resolve_output
+     0.02%     0.00%             0  memcached  [kernel.kallsyms]      [k] setup_object_debug.isra.60
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343439352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313235352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303137362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323138362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323231332d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] enqueue_hrtimer
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000a2c
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393035392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0a00303736363539
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333438342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383031342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353337352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313535382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343636362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393637332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353939322d726569
+     0.02%     0.02%             1  memcached  libevent-2.1.so.6.0.2  [.] 0x000000000001e8f2
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323231362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373738332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373533372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031333239363539
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303636382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393030332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373638332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333136352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323434392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032383733343639
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343439342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363531382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343232382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313932362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363737312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373231322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353237372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036333831393435
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323933362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303730372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343432312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7835333837363833
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0033363533303331
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353832352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036393033353331
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373332362d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] update_fast_timekeeper
+     0.02%     0.02%             1  memcached  memcached              [.] itoa_u32
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363036362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031333631323339
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7831303439373337
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363635322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037303536373033
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393730352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031313137363438
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363737392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333735332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363839322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333337372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313032342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333034352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303831372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353937362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303439322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363435312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373630342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363932352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036343137343431
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323839352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333932332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038383430313638
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0a00333935373233
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303130312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343834392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038373636313136
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383238372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353137372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353338342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393438372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303234382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343730332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373734352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353531382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353837382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343736342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000002a9
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383136342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313336312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363434322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393835382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0039333936393133
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373934352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393138372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373338362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x381196a0000001ec
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3806ace0000001f1
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373936362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313632342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343339332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000b22
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333032342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323536352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373136332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363936312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323233342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313733332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373235342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343136352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343639332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333732352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353531362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353231362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373531312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323036352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313037342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393937392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313530332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373836332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303435392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323432392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323037312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373830362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313236332d726569
+     0.02%     0.02%             1  memcached  memcached              [.] __ctype_b_loc@plt
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373839382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303036352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303433392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353733322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031333038323037
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303034332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393433332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343331382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323232372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323539382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383931312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x38051f6000000204
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373436352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393738352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313637352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343930382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373635362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030383030383639
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313337322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323438332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032343936373038
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031393531363631
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034323737353533
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353037312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303437342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353439322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333833372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333437362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000034e
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343439382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353232382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7833383932373731
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353435312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0039393436303934
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383739352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353634352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333630312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7836323338303831
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0033303038323236
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393436342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323936332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036353833373031
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393834332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353935312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373839352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343133362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353838392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373339332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030333135343536
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383933352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313435392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393734352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323731392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373738362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333837362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333939382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313835392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343130322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303138322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373332312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373636332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383037382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363139332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313635332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303632372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393038392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353834372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373532382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035333239313035
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x380ff480000001f3
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353037332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0038333331383335
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323832362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373232392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303437322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383438312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353132332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393031342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373337332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313734322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343038322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333133342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343333362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323839342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383336352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303139382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353532352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343639352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303637392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x000000000000076b
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333930352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333334322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303737392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343838362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333237332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323136362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383331332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333732322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0032343033313832
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313634372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333936332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393531312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x380f138000000208
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303732352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313137342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393733372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323135362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393636382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363334362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0030303634313435
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323733342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323638362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353431312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303131392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353132392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393137322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393037312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313137312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333037372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343634372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353239312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383632382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383936382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0036383539393636
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383234322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383238322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313633392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323530352d726569
+     0.02%     0.02%             1  memcached  memcached              [.] do_item_link
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000019100000000
+     0.02%     0.00%             0  memcached  libc-2.27.so           [.] epoll_ctl
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] sys_epoll_ctl
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323632342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363735312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383931342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383238382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353830382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313430362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323330362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313539342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343030362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x00000000000001ab
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383633392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383333362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373435392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383635312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393339372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363934382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383235352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313139342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313030362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333734392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037393534353433
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363432352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383533392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383437372d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] get_partial_node.isra.73
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383934392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x3807302000000207
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393039332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383130322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343033352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393032372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0031393538323634
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303837322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313737382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313732342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353634332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333132352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313232382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0035353035303935
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0a00333635363637
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363633342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x7836353934323032
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393936342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343038392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353031392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373830372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333836332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333338352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313834312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393337362d726569
+     0.02%     0.02%             1  memcached  [kernel.kallsyms]      [k] ns_to_timespec64
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373231312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x380f066000000202
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343132312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353237382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383136352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313735342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303036372d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333839322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323232362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373732312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313039382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373832322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x383734392d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x333538362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343435352d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323334312d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313932342d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x313834322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363338322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x343338332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x303434332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0037333835303237
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x323738322d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0000000000000518
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x393937382d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x363332362d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x0034373037313131
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x353030332d726569
+     0.02%     0.00%             0  memcached  [unknown]              [.] 0x373632392d726569
+     0.00%     0.00%             2  memcached  memcached              [.] lru_maintainer_thread
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] schedule
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] __sched_text_start
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] finish_task_switch
+     0.00%     0.00%             1  memcached  [kernel.kallsyms]      [k] __perf_event_task_sched_in
+     0.00%     0.00%             0  memcached  libc-2.27.so           [.] __nanosleep
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] sys_nanosleep
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] hrtimer_nanosleep
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] do_nanosleep
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] intel_pmu_enable_all
+     0.00%     0.00%             2  memcached  [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.23
+     0.00%     0.00%            17  memcached  [kernel.kallsyms]      [k] native_write_msr
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] call_function_single_interrupt
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] smp_call_function_single_interrupt
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] generic_smp_call_function_single_interrupt
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] flush_smp_call_function_queue
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] remote_function
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] event_function
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] __perf_event_enable
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] ctx_resched
+     0.00%     0.00%             1  memcached  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] schedule_hrtimeout_range
+     0.00%     0.00%             0  memcached  [kernel.kallsyms]      [k] schedule_hrtimeout_range_clock
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
